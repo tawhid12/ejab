@@ -53,11 +53,11 @@ return [
     |
     */
 
-    'url' => env('APP_URL', "http://localhost"),
-    //'url' => env('APP_URL', "https://quickpicker.xyz/elite"),
+    //'url' => env('APP_URL', "http://localhost"),
+    'url' => env('APP_URL', "https://quickpicker.xyz/ejab"),
 
-    'asset_url' => env('ASSET_URL', "http://localhost/ejab").'/public',
-    //'asset_url' => env('ASSET_URL', "https://quickpicker.xyz/elite").'/public',
+    //'asset_url' => env('ASSET_URL', "http://localhost/ejab").'/public',
+    'asset_url' => env('ASSET_URL', "https://quickpicker.xyz/ejab").'/public',
    
 
     /*
