@@ -86,7 +86,7 @@ Route::get('/vAlbum/{slug}', [media::class,'videoAlbum'])->name('vAlbum');
 Route::get('/video/{slug}', [media::class,'video'])->name('video');
 
 // Super Admin
-Route::group(['middleware' => 'isSuperAdmin'], function () {
+Route::group(['middleware' => 'isSuperadmin'], function () {
 
     Route::prefix('superadmin')->group(function () {
 
