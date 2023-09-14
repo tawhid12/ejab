@@ -52,7 +52,7 @@ return new class extends Migration
         });
         DB::table('about_us_pages')->insert([
             [
-                'longText' => '',
+                'description' => '',
                 'created_at' => Carbon::now()
             ],
         ]);
