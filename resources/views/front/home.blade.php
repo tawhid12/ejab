@@ -91,7 +91,7 @@
             </div>
             <div class="col-md-6">
                 <div class="img-box">
-                    <img src="{{asset('uploads/aboutus/'.$about->image)}}" alt="" />
+                    <img src="{{asset('uploads/aboutus/thumb/'.$about->image)}}" alt="" />
                 </div>
             </div>
         </div>

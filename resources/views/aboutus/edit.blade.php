@@ -21,7 +21,7 @@
                                             <label for="Picture">Image</label>
                                             <input type="file" id="Picture" class="form-control"
                                                 placeholder="Picture" name="Picture">
-                                                <img width="50px" src="{{asset('uploads/aboutus/'.$a->image)}}" alt="">
+                                                <img width="50px" src="{{asset('uploads/aboutus/thumb/'.$a->image)}}" alt="">
                                                 @if($errors->has('Picture'))
                                                     <span class="text-danger"> {{ $errors->first('Picture') }}</span>
                                                 @endif

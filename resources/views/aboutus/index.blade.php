@@ -31,7 +31,7 @@
                             @forelse($about_us as $a)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td><img width="100px" src="{{asset('uploads/aboutus/'.$a->image)}}" alt=""></td>
+                                <td><img width="100px" src="{{asset('uploads/aboutus/thumb/'.$a->image)}}" alt=""></td>
                                 {{--<td>{{$a->link}}</td>--}}
                                 <td>{{$a->description}}</td>
                                 <td class="white-space-nowrap">
