@@ -8,7 +8,7 @@ use App\Models\User;
 use Session;
 use App\Http\Traits\ResponseTrait;
 
-class isSuperAdmin
+class isSuperadmin
 {
 	use ResponseTrait;
     /**
