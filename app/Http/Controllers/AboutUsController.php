@@ -52,12 +52,13 @@ class AboutUsController extends Controller
             $a=About::findOrFail(encryptor('decrypt',$id));
 
             $path='uploads/aboutus';
+            $dpath='uploads/aboutus/thumb/';
             if($request->has('Picture') && $request->Picture)
-            if($this->deleteImage($a->image,$path))
+            if($this->deleteImage($a->image,$dpath))
                 $a->image=$this->resizeImage($request->Picture,$path,true,555,370,true);
 
             $a->link=$request->Link;
-            $a->Description=$request->Description;
+            $a->description=$request->description;
             if($a->save()){
             Toastr::success('About Us Update Successfully!');
             return redirect()->route(currentUser().'.aboutus.index');
