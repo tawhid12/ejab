@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('link')->nullable();
             $table->timestamps();
         });
-        DB::table('aboutus')->insert([
+        DB::table('abouts')->insert([
             [
                 'description' => '',
                 'image' => '',
