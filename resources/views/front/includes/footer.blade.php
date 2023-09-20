@@ -114,22 +114,26 @@
     <script type="text/javascript" src="{{asset('front/js/jquery-3.4.1.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('front/js/bootstrap.js')}}"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".owl-carousel").owlCarousel({
-                autoPlay: 3000,
-                items: 4,
-                itemsDesktop: [1199, 3],
-                itemsDesktopSmall: [979, 3],
-                center: true,
-                nav: true,
-                loop: true,
+                items: 4, // Number of items to display
+                loop: true, // Infinite loop
+                autoplay: true, // Autoplay
+                autoplayTimeout: 3000, // Autoplay timeout in milliseconds
+                responsiveClass: true, // Enable responsive options
                 responsive: {
-                    600: {
-                        items: 4,
+                    0: {
+                        items: 1 // Number of items to display on small screens
                     },
-                },
+                    600: {
+                        items: 3 // Number of items to display on medium screens
+                    },
+                    1000: {
+                        items: 4 // Number of items to display on large screens
+                    }
+                }
             });
         });
     </script>
