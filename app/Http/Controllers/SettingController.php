@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use Illuminate\Http\Request;
-
+use App\Http\Traits\ImageHandleTraits;
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
+use Carbon\Carbon;
 class SettingController extends Controller
 {
+    use ImageHandleTraits;
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +18,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+        $setting = Setting::first();
+        return view('com_profile.index',compact('setting'));
     }
 
     /**
@@ -55,9 +60,10 @@ class SettingController extends Controller
      * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function edit(Setting $setting)
+    public function edit($id)
     {
-        //
+        $setting=Setting::findOrFail(encryptor('decrypt',$id));
+        return view('com_profile.edit',compact('setting'));
     }
 
     /**
@@ -67,9 +73,32 @@ class SettingController extends Controller
      * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Setting $setting)
+    public function update(Request $request,$id)
     {
-        //
+        try {
+            $b = Setting::findOrFail(encryptor('decrypt', $id));
+            $b->email = $request->email;
+            $b->contact = $request->contact;
+            $path = 'uploads/setting/';
+            $dpath = 'uploads/setting/thumb/';
+            if ($request->has('image') && $request->image)
+            if ($this->deleteImage($b->image, $dpath))
+            $b->company_logo = $this->resizeImage($request->image, $path, true, 80, 88, true);
+
+
+            if ($b->save()) {
+                Toastr::success(' Uploaded Successfully!');
+                return redirect()->route(currentUser() . '.setting.index');
+            } else {
+                Toastr::warning('Please try Again!');
+                return redirect()->back();
+            }
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+            return back()->withInput();
+        }
+
     }
 
     /**

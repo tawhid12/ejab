@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle',trans('Our Business'))
+@section('pageTitle',trans('Our Member'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
@@ -9,7 +9,7 @@
 
             <div class="card">
                 <div>
-                    <a class="float-end" href="{{route(currentUser().'.business.create')}}" style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
+                    <a class="float-end" href="{{route(currentUser().'.ourMember.create')}}" style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
                 </div>
                 @if(Session::has('response'))
                 {!!Session::get('response')['message']!!}
@@ -21,31 +21,32 @@
                         <thead>
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
-                                <th scope="col">{{__('Image')}}</th>
-                                <th scope="col">{{__('Heading Text')}}</th>
+                                <th scope="col">{{__('Given Name')}}</th>
                                 <th scope="col">{{__('Description')}}</th>
-                                {{--<th scope="col">{{__('Link')}}</th>--}}
+                                <th scope="col">{{__('Image')}}</th>
                                 <th class="white-space-nowrap" width="100px">{{__('Action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($business as $b)
+                            @forelse($ourmember as $m)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td><img width="100px" src="{{asset('uploads/business/thumb/'.$b->image)}}" alt=""></td>
-                                <td>{{$b->heading_text}}</td>
-                                <td>{{$b->description}}</td>
+                                <td>{{$m->given_name}}</td>
+                                <!-- <td>{{$m->linked_in_profile}}</td>
+                                <td>{{$m->facebook_profile}}</td> -->
+                                <td>{{$m->details}}</td>
+                                <td><img width="100px" src="{{asset('uploads/ourmember/thumb/'.$m->image)}}" alt=""></td>
                                 <td class="white-space-nowrap">
-                                    <a href="{{route(currentUser().'.business.show',encryptor('encrypt',$b->id))}}">
+                                    <a href="{{route(currentUser().'.ourMember.show',encryptor('encrypt',$m->id))}}">
                                         <i class="bi bi-eye"></i>
                                     </a>
-                                    <a href="{{route(currentUser().'.business.edit',encryptor('encrypt',$b->id))}}">
+                                    <a href="{{route(currentUser().'.ourMember.edit',encryptor('encrypt',$m->id))}}">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
-                                    <a href="javascript:void()" onclick="$('#form{{$b->id}}').submit()">
+                                    <a href="javascript:void()" onclick="$('#form{{$m->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
-                                    <form id="form{{$b->id}}" action="{{route(currentUser().'.business.destroy',encryptor('encrypt',$b->id))}}" method="post">
+                                    <form id="form{{$m->id}}" action="{{route(currentUser().'.ourMember.destroy',encryptor('encrypt',$m->id))}}" method="post">
                                         @csrf
                                         @method('delete')
                                     </form>
@@ -59,7 +60,7 @@
                         </tbody>
                     </table>
                     <div class="my-3">
-                        {!! $business->links()!!}
+                        {!! $ourmember->links()!!}
                     </div>
                 </div>
             </div>

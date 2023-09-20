@@ -52,6 +52,9 @@
                         <li class="submenu-item">
                             <a href="{{route(currentUser().'.adminuser.index')}}">Users</a>
                         </li>
+                        <li class="submenu-item">
+                            <a href="{{route(currentUser().'.setting.index')}}">Settings</a>
+                        </li>
                         <li class="submenu-item"><a href="{{route(currentUser().'.scrollN.index')}}">{{__('Scroll Notice')}}</a></li>
                         <li class="submenu-item"><a href="{{route(currentUser().'.slider.index')}}">{{__('Slider')}}</a></li>
                         <!-- <li class="submenu-item ">
@@ -75,13 +78,13 @@
 
             </ul>
             </li>
-            <li class="sidebar-item  has-sub">
+            <!-- <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'> {{__('Page Settings')}}</a>
                 <ul class="submenu">
                     <li class="submenu-item"><a href="{{route(currentUser().'.page.index')}}">{{__('Web Page')}}</a></li>
                     <li class="submenu-item"><a href="{{route(currentUser().'.front_menu.index')}}"> {{__('Manage Menu')}}</a></li>
                 </ul>
-            </li>
+            </li> -->
 
 
 
@@ -121,9 +124,27 @@
                 </a>
             </li>
             <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.aboutpage.index')}}" class="sidebar-link">
+                <a href="{{route(currentUser().'.car.index')}}" class="sidebar-link">
                     <i class="bi bi-life-preserver"></i>
-                    <span>About Us</span>
+                    <span>Career</span>
+                </a>
+            </li>
+            <li class="sidebar-item  ">
+                <a href="{{route(currentUser().'.report.index')}}" class="sidebar-link">
+                    <i class="bi bi-life-preserver"></i>
+                    <span>Report</span>
+                </a>
+            </li>
+            <li class="sidebar-item  ">
+                <a href="{{route(currentUser().'.ourMember.index')}}" class="sidebar-link">
+                    <i class="bi bi-life-preserver"></i>
+                    <span>Our Member</span>
+                </a>
+            </li>
+            <li class="sidebar-item  ">
+                <a href="{{route(currentUser().'.contact.index')}}" class="sidebar-link">
+                    <i class="bi bi-life-preserver"></i>
+                    <span>Contact</span>
                 </a>
             </li>
 

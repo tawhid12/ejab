@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
-                                        <label for="heading_text">Heaing Text</label>
+                                        <label for="heading_text">Heading Text</label>
                                         <input type="text" id="heading_text" class="form-control" value="{{ old('heading_text')}}" name="heading_text">
                                         @if($errors->has('heading_text'))
                                         <span class="text-danger"> {{ $errors->first('heading_text') }}</span>

@@ -42,7 +42,7 @@ trait ImageHandleTraits{
             $img->resize($w, $h, function ($constraint) {$constraint->aspectRatio();})->save($destinationPath.'/thumb/'.$imageName);
         else
             $img->resize($w, $h)->save($destinationPath.'/thumb/'.$imageName);
-
+            $img->fit($w, $h);
         
         //$image->move($destinationPath, $imageName);
         return $imageName;

@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('pageTitle',trans('Create Brand'))
+@section('pageTitle',trans('Create Partner'))
 @section('pageSubTitle',trans('Create'))
 
 @section('content')

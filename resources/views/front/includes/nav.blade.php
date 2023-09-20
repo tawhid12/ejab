@@ -1,5 +1,5 @@
         <!-- header section strats -->
-        <header class="header_section header-bg mb-3 animated">
+        <header class="header_section header-bg mb-3">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container">
                     <div class="logo-div">
@@ -33,23 +33,23 @@
                                         <a class="dropdown-item" href="#">Group Logo</a>
                                     </div>
                                 </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="Business" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @php $business = \DB::table('our_businesses')->select('heading_text','page_slug')->get(); @endphp
+                                <li class="nav-item @if(count($business) > 0) dropdown @endif">
+                                    <a class="nav-link @if(count($business) > 0) dropdown-toggle @endif" href="#" id="Business" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Our Business
                                     </a>
+                                    
+                                    @if(count($business) > 0)
                                     <div class="dropdown-menu" aria-labelledby="Business">
-                                        <a class="dropdown-item" href="#">Himadri Limited</a>
-                                        <a class="dropdown-item" href="#">Rabeya Flower Mills Ltd.</a>
-                                        <a class="dropdown-item" href="#">Multipurpose Himadri Agro Processing Co. Ltd.</a>
-                                        <a class="dropdown-item" href="#">Northern Agricultural & Ind. Co. Ltd. (NAICOL)</a>
-                                        <a class="dropdown-item" href="#">Ejab Alliance Ltd.</a>
-                                        <a class="dropdown-item" href="#">Ejab Distribution Ltd.</a>
-                                        <a class="dropdown-item" href="#">Ejab Agro Ltd.</a>
+                                        @forelse($business as $b)
+                                        <a class="dropdown-item" href="{{route('singleBusinessPage',$b->page_slug)}}">{{$b->heading_text}}</a>
+                                        @empty
+                                        @endforelse
                                     </div>
+                                    @endif
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html"> Our Brands </a>
+                                    <a class="nav-link" href="{{route('brand')}}"> Our Brands </a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="Media" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,22 +57,25 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="Media">
                                         <a class="dropdown-item" href="#">News Letter</a>
-                                        <a class="dropdown-item" href="#">Photo Gallery</a>
-                                        <a class="dropdown-item" href="#">Videos</a>
+                                        <a class="dropdown-item" href="{{route('pGallery')}}">Photo Gallery</a>
+                                        <a class="dropdown-item" href="{{route('vGallery')}}">Videos</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="service.html"> Career </a>
+                                    <a class="nav-link" href="{{route('team')}}"> Our Team </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact us</a>
+                                    <a class="nav-link" href="{{route('career')}}"> Career </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('contact')}}">Contact us</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="Reports" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Reports
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="Reports">
-                                        <a class="dropdown-item" href="#">Financial Reports</a>
+                                        <a class="dropdown-item" href="{{route('report')}}">Financial Reports</a>
                                     </div>
                                 </li>
                             </ul>

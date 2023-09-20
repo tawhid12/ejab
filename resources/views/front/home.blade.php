@@ -12,7 +12,7 @@
     <div class="ejab-overlay home">
         @include('front.includes.nav')
         <!-- marqyuee -->
-        <section class="container animated">
+        <section class="container">
 
             <marquee onmouseover="this.stop();" onmouseout="this.start();">
                 @forelse ($scroll_notice as $sn)

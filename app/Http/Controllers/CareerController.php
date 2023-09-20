@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Career;
 use Illuminate\Http\Request;
-
+use Brian2694\Toastr\Facades\Toastr;
+use Exception;
 class CareerController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class CareerController extends Controller
      */
     public function index()
     {
-        //
+        $career = Career::paginate(10);
+        return view('career.index', compact('career'));
     }
 
     /**
@@ -24,7 +26,6 @@ class CareerController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -35,7 +36,28 @@ class CareerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $c = new Career;
+           
+            if ($request->file('upload_file')->isValid()) {
+                $file = $request->file('upload_file');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/career/'), $fileName);
+                $c->bus_id = $request->bus_id;
+                $c->upload_file = $fileName;
+                if ($c->save()) {
+                    Toastr::success('Submitted Successfully!');
+                    return redirect()->back();
+                } else {
+                    Toastr::warning('Please try Again!');
+                    return redirect()->back();
+                }
+            }
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+            return back()->withInput();
+        }
     }
 
     /**

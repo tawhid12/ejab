@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Brand;
 use App\Models\Page;
+use App\Models\year;
 use App\Models\Frontend;
 use App\Models\Notice;
 use App\Models\scroll_notice;
@@ -19,6 +20,7 @@ use App\Models\OurBusiness;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
+use App\Models\Report;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 use DB;
@@ -153,5 +155,29 @@ class FrontendController extends Controller
                             })->first();
         }
         return view('frontend.club_dues',compact('members'));
+    }
+    public function singleBusinessPage($page_slug)
+    {
+        $data = OurBusiness::where('page_slug', $page_slug)->firstOrFail();
+        return view('front.single_business_page',compact('data'));
+    }
+    public function career(){
+        $data =  OurBusiness::get();
+        return view('front.career',compact('data'));
+    }
+    public function report(){
+        $report = Report::orderBy('id', 'desc')->first();
+        return view('front.finace_report',compact('report'));
+    }
+    public function contact(){
+        return view('front.contact');
+    }
+    public function brand(){
+        $brands = Brand::paginate(10);
+        return view('front.our_brand',compact('brands'));
+    }
+    public function team(){
+        $our_team = OurMember::all();
+        return view('front.our_team',compact('our_team'));
     }
 }

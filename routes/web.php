@@ -38,7 +38,10 @@ use App\Http\Controllers\PartnerController as partner;
 use App\Http\Controllers\OurBusinessController as ourbs;
 use App\Http\Controllers\BlogController as blog;
 use App\Http\Controllers\AboutUsPageController as aboutpage;
-
+use App\Http\Controllers\CareerController as career;
+use App\Http\Controllers\ReportController as rep;
+use App\Http\Controllers\ContactController as contact;
+use App\Http\Controllers\SettingController as setting;
 /* Middleware */
 use App\Http\Middleware\isSuperadmin;
 
@@ -69,6 +72,15 @@ Route::get('/our-mission-vission',[aboutus::class,'overview'])->name('missionVis
 Route::get('/csr',[aboutus::class,'overview'])->name('csr');
 Route::get('/group-logo',[aboutus::class,'overview'])->name('groupLogo');
 
+Route::get('/career', [front::class,'career'])->name('career');
+Route::resource('car', career::class)->only(['store']);
+Route::get('/financial-report', [front::class,'report'])->name('report');
+Route::get('/contact-us', [front::class,'contact'])->name('contact');
+Route::resource('contact', contact::class)->only(['store']);
+Route::get('/our-brands', [front::class,'brand'])->name('brand');
+Route::get('/our-team', [front::class,'team'])->name('team');
+
+
 Route::group(['middleware' => 'unknownUser'], function () {
     Route::get('/admin-login', [auth::class,'signInForm'])->name('signInForm');
     Route::post('/login', [auth::class,'signIn'])->name('login.check');
@@ -84,6 +96,8 @@ Route::get('/photo/{slug}', [media::class,'photo'])->name('photo');
 Route::get('video_gallery', [media::class,'vGallery'])->name('vGallery');
 Route::get('/vAlbum/{slug}', [media::class,'videoAlbum'])->name('vAlbum');
 Route::get('/video/{slug}', [media::class,'video'])->name('video');
+
+Route::get('{page_slug}', [front::class,'singleBusinessPage'])->name('singleBusinessPage');
 
 // Super Admin
 Route::group(['middleware' => 'isSuperadmin'], function () {
@@ -129,6 +143,10 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::resource('business',ourbs::class,['as'=>'superadmin']);
         Route::resource('blog',blog::class,['as'=>'superadmin']);
         Route::resource('aboutpage',aboutpage::class,['as'=>'superadmin']);
+        Route::resource('car', career::class,['as'=>'superadmin'])->only(['index']);
+        Route::resource('report', rep::class,['as'=>'superadmin']);
+        Route::resource('contact', contact::class,['as'=>'superadmin']);
+        Route::resource('setting', setting::class,['as'=>'superadmin']);
     });
 
 });

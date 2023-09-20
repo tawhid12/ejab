@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('pageTitle',trans('Our Business'))
+@section('pageTitle',trans('Contact'))
 @section('pageSubTitle',trans('List'))
 
 @section('content')
@@ -9,7 +9,7 @@
 
             <div class="card">
                 <div>
-                    <a class="float-end" href="{{route(currentUser().'.business.create')}}" style="font-size:1.7rem"><i class="bi bi-plus-square-fill"></i></a>
+
                 </div>
                 @if(Session::has('response'))
                 {!!Session::get('response')['message']!!}
@@ -17,39 +17,34 @@
                 <!-- table bordered -->
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
-
+                        
                         <thead>
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
-                                <th scope="col">{{__('Image')}}</th>
-                                <th scope="col">{{__('Heading Text')}}</th>
-                                <th scope="col">{{__('Description')}}</th>
-                                {{--<th scope="col">{{__('Link')}}</th>--}}
-                                <th class="white-space-nowrap" width="100px">{{__('Action') }}</th>
+                                <th scope="col">{{__('Name')}}</th>
+                                <th scope="col">{{__('Email')}}</th>
+                                <th scope="col">{{__('Message')}}</th>
+                                <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse($business as $b)
+                            @forelse($contacts as $c)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <td><img width="100px" src="{{asset('uploads/business/thumb/'.$b->image)}}" alt=""></td>
-                                <td>{{$b->heading_text}}</td>
-                                <td>{{$b->description}}</td>
+                                <th scope="row">{{ $c->name }}</th>
+                                <td>{{$c->email}}</td>
+                                <td>{{$c->message}}</td>
+
                                 <td class="white-space-nowrap">
-                                    <a href="{{route(currentUser().'.business.show',encryptor('encrypt',$b->id))}}">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
-                                    <a href="{{route(currentUser().'.business.edit',encryptor('encrypt',$b->id))}}">
-                                        <i class="bi bi-pencil-square"></i>
-                                    </a>
-                                    <a href="javascript:void()" onclick="$('#form{{$b->id}}').submit()">
+                                    <a href="javascript:void()" onclick="$('#form{{$c->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>
-                                    <form id="form{{$b->id}}" action="{{route(currentUser().'.business.destroy',encryptor('encrypt',$b->id))}}" method="post">
+                                    <form id="form{{$c->id}}" action="{{route(currentUser().'.contact.destroy',encryptor('encrypt',$c->id))}}" method="post">
                                         @csrf
                                         @method('delete')
                                     </form>
                                 </td>
+
                             </tr>
                             @empty
                             <tr>
@@ -59,7 +54,7 @@
                         </tbody>
                     </table>
                     <div class="my-3">
-                        {!! $business->links()!!}
+                        {!! $contacts->links()!!}
                     </div>
                 </div>
             </div>
