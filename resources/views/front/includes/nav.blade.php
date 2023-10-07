@@ -1,4 +1,4 @@
-@php $setting=\App\Models\setting::first(); @endphp       
+@php $setting=\App\Models\Setting::first(); @endphp       
        <!-- header section strats -->
         <header class="header_section header-bg mb-3">
             <div class="container">
