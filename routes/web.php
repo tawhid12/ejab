@@ -42,6 +42,8 @@ use App\Http\Controllers\CareerController as career;
 use App\Http\Controllers\ReportController as rep;
 use App\Http\Controllers\ContactController as contact;
 use App\Http\Controllers\SettingController as setting;
+use App\Http\Controllers\MessageController as msg;
+
 /* Middleware */
 use App\Http\Middleware\isSuperadmin;
 
@@ -62,15 +64,15 @@ use App\Http\Middleware\isSuperadmin;
 Route::get('/mail', [test::class,'index'])->name('mail');
 /* === Page ==== */
 Route::get('/',[front::class,'index'])->name('front');
-Route::get('/overview',[aboutus::class,'overview'])->name('overview');
-Route::get('/founder-chairman',[aboutus::class,'overview'])->name('founderChairman');
-Route::get('/chairperson-message',[aboutus::class,'overview'])->name('chairpersonMsg');
-Route::get('/managing-director-message',[aboutus::class,'overview'])->name('managingDirMsg');
-Route::get('/board-directories',[aboutus::class,'overview'])->name('overview');
-Route::get('/key-management',[aboutus::class,'overview'])->name('keyManagement');
-Route::get('/our-mission-vission',[aboutus::class,'overview'])->name('missionVission');
-Route::get('/csr',[aboutus::class,'overview'])->name('csr');
-Route::get('/group-logo',[aboutus::class,'overview'])->name('groupLogo');
+Route::get('/overview',[front::class,'overview'])->name('overview');
+Route::get('/founder-chairman',[front::class,'foundermsg'])->name('foundermsg');
+Route::get('/chairperson-message',[front::class,'chairpersonMsg'])->name('chairpersonMsg');
+Route::get('/managing-director-message',[front::class,'overview'])->name('managingDirMsg');
+Route::get('/board-directories',[front::class,'boardDirect'])->name('boardDirect');
+Route::get('/key-management',[front::class,'keyManagement'])->name('keyManagement');
+Route::get('/our-mission-vission',[front::class,'msnVsn'])->name('msnVsn');
+Route::get('/csr',[front::class,'csr'])->name('csr');
+Route::get('/group-logo',[front::class,'groupLogo'])->name('groupLogo');
 
 Route::get('/career', [front::class,'career'])->name('career');
 Route::resource('car', career::class)->only(['store']);
@@ -147,6 +149,7 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::resource('report', rep::class,['as'=>'superadmin']);
         Route::resource('contact', contact::class,['as'=>'superadmin']);
         Route::resource('setting', setting::class,['as'=>'superadmin']);
+        Route::resource('message', msg::class,['as'=>'superadmin']);
     });
 
 });

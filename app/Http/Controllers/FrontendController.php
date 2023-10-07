@@ -18,6 +18,7 @@ use App\Models\Slider;
 use App\Models\Partner;
 use App\Models\OurBusiness;
 use App\Models\Blog;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
 use App\Models\Report;
@@ -137,7 +138,7 @@ class FrontendController extends Controller
     public function page($slug)
     {
         $page_data= Page::where('page_slug',"$slug")->where('published',1)->first();
-        return view('frontend.Page.index',compact('page_data'));
+        return view('front.Page.index',compact('page_data'));
     }
 
     /* get daynamic page */
@@ -181,5 +182,37 @@ class FrontendController extends Controller
     public function team(){
         $our_team = OurMember::all();
         return view('front.our_team',compact('our_team'));
+    }
+    public function overview(){
+        $m = Message::first();
+        return view('front.overview',compact('m'));
+    }
+    public function foundermsg (){
+        $m = Message::first();
+        return view('front.foundermsg',compact('m'));
+    }
+    public function chairpersonMsg (){
+        $m = Message::first();
+        return view('front.chairpersonMsg',compact('m'));
+    }
+    public function boardDirect (){
+        $our_team = OurMember::all();
+        return view('front.board_director',compact('our_team'));
+    }
+    public function keyManagement (){
+        $m = Message::first();
+        return view('front.keyManagement',compact('m'));
+    }
+    public function msnVsn (){
+        $m = Message::first();
+        return view('front.msnVsn',compact('m'));
+    }
+    public function csr (){
+        $m = Message::first();
+        return view('front.csr',compact('m'));
+    }
+    public function groupLogo (){
+        $logo = OurBusiness::get();
+        return view('front.groupLogo',compact('logo'));
     }
 }

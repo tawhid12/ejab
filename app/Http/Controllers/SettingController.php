@@ -85,6 +85,24 @@ class SettingController extends Controller
             if ($this->deleteImage($b->image, $dpath))
             $b->company_logo = $this->resizeImage($request->image, $path, true, 80, 88, true);
 
+            $path = 'uploads/payment_logo/';
+            $dpath = 'uploads/payment_logo/thumb/';
+            if ($request->has('payment_logo') && $request->payment_logo)
+            if ($this->deleteImage($b->payment_logo, $dpath))
+            $b->payment_logo = $this->resizeImage($request->payment_logo, $path, true, 555, 89, true);
+
+            $path = 'uploads/memeber_logo_1/';
+            $dpath = 'uploads/memeber_logo_1/thumb/';
+            if ($request->has('memeber_logo_1') && $request->memeber_logo_1)
+            if ($this->deleteImage($b->memeber_logo_1, $dpath))
+            $b->memeber_logo_1 = $this->resizeImage($request->memeber_logo_1, $path, true, 106, 51, true);
+
+            $path = 'uploads/memeber_logo_2/';
+            $dpath = 'uploads/memeber_logo_2/thumb/';
+            if ($request->has('memeber_logo_2') && $request->memeber_logo_2)
+            if ($this->deleteImage($b->memeber_logo_2, $dpath))
+            $b->memeber_logo_2 = $this->resizeImage($request->memeber_logo_2, $path, true, 106, 51, true);
+
 
             if ($b->save()) {
                 Toastr::success(' Uploaded Successfully!');

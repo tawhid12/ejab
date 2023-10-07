@@ -39,114 +39,151 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+                <li class="sidebar-item"><a href="{{route(currentUser().'.setting.index')}}" class="sidebar-link"> <i class="bi bi-grid-fill"></i>
+                        <span>Company Profile Settings</span></a>
+                </li>
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class="sidebar-link">
+                        <i class="bi bi-files"></i>
+                        <span>Manage Website</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu-item sidebar-item has-sub">
+                            <a href="#" class="sidebar-link"> Front Page Settings</a>
+                            <ul class="submenu" style="display: none;">
+
+                                <li class="submenu-item"><a href="{{route(currentUser().'.scrollN.index')}}">{{__('Scroll Notice')}}</a></li>
+                                <li class="submenu-item"><a href="{{route(currentUser().'.slider.index')}}">{{__('Slider')}}</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu-item sidebar-item has-sub">
+                            <a href="#" class="sidebar-link">
+                                <i class="bi bi-stack"></i>
+                                <span>Gallery</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item"><a href="{{route(currentUser().'.year.index')}}">{{__('Album Year')}}</a></li>
+                                <li class="submenu-item"><a href="{{route(currentUser().'.pGalleryCat.index')}}">{{__('Photo Album')}}</a></li>
+                                <li class="submenu-item"><a href="{{route(currentUser().'.pGallery.index')}}">{{__('Photo')}}</a></li>
+                                <li class="submenu-item"><a href="{{route(currentUser().'.vgalleryCat.index')}}">{{__('Video Album')}}</a></li>
+                                <li class="submenu-item"><a href="{{route(currentUser().'.vgallery.index')}}">{{__('Video')}}</a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-title">Brand &amp; Partner &amp; Business</li>
+                        <li class="submenu-item sidebar-item">
+                            <a href="{{route(currentUser().'.brand.index')}}" class="sidebar-link">
+                                <i class="bi bi-grid"></i>
+                                <span>Brand</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item sidebar-item">
+                            <a href="{{route(currentUser().'.partner.index')}}" class="sidebar-link">
+                                <i class="bi bi-person-square"></i>
+                                <span>Partner</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item sidebar-item">
+                            <a href="{{route(currentUser().'.business.index')}}" class="sidebar-link">
+                                <i class="bi bi-hdd-network-fill"></i>
+                                <span>Business</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'> {{__('Page Settings')}}</a>
+                            <ul class="submenu">
+                                <li class="submenu-item"><a href="{{route(currentUser().'.page.index')}}">{{__('Web Page')}}</a></li>
+                                <li class="submenu-item"><a href="{{route(currentUser().'.front_menu.index')}}"> {{__('Manage Menu')}}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
+
+
+
+
+
+                </li>
+
+
+
+
+
+
+                <!-- <li class="sidebar-title">Users &amp; Message</li> -->
+
 
                 <li class="sidebar-item  has-sub">
                     <a href="#" class="sidebar-link">
                         <i class="bi bi-stack"></i>
-                        <span>Settings</span>
+                        <span>Users &amp; Message</span>
                     </a>
-                    <ul class="submenu ">
+                    <ul class="submenu">
+                        <li class="submenu-item">
+                            <a href="{{route(currentUser().'.adminuser.index')}}" class="sidebar-link">
+                                <i class="bi bi-file-earmark-person"></i>
+                                <span>Users</span>
+                            </a>
+                        </li>
+
                         <!-- <li class="submenu-item">
                             <a href="{{route(currentUser().'.notice.index')}}">Notice</a>
                         </li> -->
+
                         <li class="submenu-item">
-                            <a href="{{route(currentUser().'.adminuser.index')}}">Users</a>
+                            <a href="{{route(currentUser().'.message.index')}}" class="sidebar-link">
+                                <i class="bi bi-envelope-arrow-up-fill"></i>
+                                <span>Message</span>
+                            </a>
                         </li>
-                        <li class="submenu-item">
-                            <a href="{{route(currentUser().'.setting.index')}}">Settings</a>
-                        </li>
-                        <li class="submenu-item"><a href="{{route(currentUser().'.scrollN.index')}}">{{__('Scroll Notice')}}</a></li>
-                        <li class="submenu-item"><a href="{{route(currentUser().'.slider.index')}}">{{__('Slider')}}</a></li>
+
                         <!-- <li class="submenu-item ">
                                     <a href="{{route(currentUser().'.role.index')}}">Role</a>
                                 </li> -->
                     </ul>
                 </li>
 
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class="sidebar-link">
-                        <i class="bi bi-stack"></i>
-                        <span>Gallery</span>
+                <li class="sidebar-item  ">
+                    <a href="{{route(currentUser().'.aboutus.index')}}" class="sidebar-link">
+                        <i class="bi bi-hourglass-bottom"></i>
+                        <span>About Us Page</span>
                     </a>
-                    <ul class="submenu ">
-                        <li class="submenu-item"><a href="{{route(currentUser().'.year.index')}}">{{__('Album Year')}}</a></li>
-                        <li class="submenu-item"><a href="{{route(currentUser().'.pGalleryCat.index')}}">{{__('Photo Album')}}</a></li>
-                        {{-- <li class="submenu-item"><a href="{{route(currentUser().'.pGallery.index')}}">{{__('Photo')}}</a>
-                </li> --}}
-                <li class="submenu-item"><a href="{{route(currentUser().'.vgalleryCat.index')}}">{{__('Video Album')}}</a></li>
-                <li class="submenu-item"><a href="{{route(currentUser().'.vgallery.index')}}">{{__('Video')}}</a></li>
+                </li>
 
-            </ul>
-            </li>
-            <!-- <li class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'> {{__('Page Settings')}}</a>
-                <ul class="submenu">
-                    <li class="submenu-item"><a href="{{route(currentUser().'.page.index')}}">{{__('Web Page')}}</a></li>
-                    <li class="submenu-item"><a href="{{route(currentUser().'.front_menu.index')}}"> {{__('Manage Menu')}}</a></li>
-                </ul>
-            </li> -->
+                <li class="sidebar-item  ">
+                    <a href="{{route(currentUser().'.blog.index')}}" class="sidebar-link">
+                        <i class="bi bi-file-earmark-post"></i>
+                        <span>Blog (Post)</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="{{route(currentUser().'.car.index')}}" class="sidebar-link">
+                        <i class="bi bi-bricks"></i>
+                        <span>Career</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="{{route(currentUser().'.report.index')}}" class="sidebar-link">
+                        <i class="bi bi-bounding-box"></i>
+                        <span>Report</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="{{route(currentUser().'.ourMember.index')}}" class="sidebar-link">
+                        <i class="bi bi-person"></i>
+                        <span>Our Member</span>
+                    </a>
+                </li>
+                <li class="sidebar-item  ">
+                    <a href="{{route(currentUser().'.contact.index')}}" class="sidebar-link">
+                        <i class="bi bi-ladder"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
 
-
-
-
-            <!-- <li class="sidebar-title">Forms &amp; Tables</li> -->
-
-
-
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.aboutus.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>About Us</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.brand.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Brand</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.partner.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Partner</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.business.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Business</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.blog.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Blog</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.car.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Career</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.report.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Report</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.ourMember.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Our Member</span>
-                </a>
-            </li>
-            <li class="sidebar-item  ">
-                <a href="{{route(currentUser().'.contact.index')}}" class="sidebar-link">
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Contact</span>
-                </a>
-            </li>
 
 
 

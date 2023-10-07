@@ -19,10 +19,43 @@
                                     <div class="form-group">
                                         <label for="image">Image</label>
                                         <input type="file" id="image" class="form-control" name="image">
-                                        <span class="text-danger">(Max With/Height: 80px * 88px)</span>
+                                        <span class="text-danger">(Max Width/Height: 80px * 88px)</span>
                                         <img width="50px" src="{{asset('uploads/setting/thumb/'.$setting->image)}}" alt="">
                                         @if($errors->has('image'))
                                         <span class="text-danger"> {{ $errors->first('image') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="image">Payment Image</label>
+                                        <input type="file" id="payment_logo" class="form-control" name="payment_logo">
+                                        <span class="text-danger">(Max With/Height: 555px * 89px)</span>
+                                        <img width="50px" src="{{asset('uploads/payment_logo/thumb/'.$setting->payment_logo)}}" alt="">
+                                        @if($errors->has('payment_logo'))
+                                        <span class="text-danger"> {{ $errors->first('payment_logo') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="memeber_logo_1">Member Logo One</label>
+                                        <input type="file" id="memeber_logo_1" class="form-control" name="memeber_logo_1">
+                                        <span class="text-danger">(Max With/Height: 106px * 51px)</span>
+                                        <img width="50px" src="{{asset('uploads/memeber_logo_1/thumb/'.$setting->memeber_logo_1)}}" alt="">
+                                        @if($errors->has('memeber_logo_1'))
+                                        <span class="text-danger"> {{ $errors->first('memeber_logo_1') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="memeber_logo_2">Member Logo Two</label>
+                                        <input type="file" id="memeber_logo_2" class="form-control" name="memeber_logo_2">
+                                        <span class="text-danger">(Max With/Height: 106px * 51px)</span>
+                                        <img width="50px" src="{{asset('uploads/memeber_logo_2/thumb/'.$setting->memeber_logo_2)}}" alt="">
+                                        @if($errors->has('memeber_logo_2'))
+                                        <span class="text-danger"> {{ $errors->first('memeber_logo_2') }}</span>
                                         @endif
                                     </div>
                                 </div>

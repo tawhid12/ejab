@@ -32,9 +32,9 @@
                                 <td>{{$setting->contact}}</td>
                                 <td><img width="100px" src="{{asset('uploads/setting/thumb/'.$setting->company_logo)}}" alt=""></td>
                                 <td class="white-space-nowrap">
-                                    <a href="{{route(currentUser().'.setting.show',encryptor('encrypt',$setting->id))}}">
+                                    <!-- <a href="{{route(currentUser().'.setting.show',encryptor('encrypt',$setting->id))}}">
                                         <i class="bi bi-eye"></i>
-                                    </a>
+                                    </a> -->
                                     <a href="{{route(currentUser().'.setting.edit',encryptor('encrypt',$setting->id))}}">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>

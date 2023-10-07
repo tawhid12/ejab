@@ -1,10 +1,11 @@
-        <!-- header section strats -->
+@php $setting=\App\Models\setting::first(); @endphp       
+       <!-- header section strats -->
         <header class="header_section header-bg mb-3">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container">
                     <div class="logo-div">
                         <a class="" href="index.html">
-                            <img src="{{asset('front/images/ejab_logo.png')}}" alt="" />
+                            <img src="{{asset('uploads/setting/thumb/'.$setting->company_logo)}}" alt="" />
                         </a>
                     </div>
 
@@ -14,7 +15,39 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
                             <ul class="navbar-nav">
-                                <li class="nav-item active">
+                                @php $rows = DB::table('front_menus')->where('parent_id',0)->where('status',1)->orderBy("rang");
+                                $flcount=$rows->count();
+                                @endphp
+                                @forelse($rows->get() as $i=>$mf)
+                                @php $rows_second = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
+                                    @if(!$rows_second)
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="{{url($mf->href)}}">{{$mf->name}} <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    @else
+                                        
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="{{url($mf->href)}}" id="{{$mf->name}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{$mf->name}}
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="{{$mf->name}}">
+                                               
+                                        
+                                                @php $rows_third = DB::select("SELECT * FROM front_menus WHERE parent_id='{$mf->id}' and status='1' ORDER BY rang"); @endphp
+                                                @if($rows_third)
+                                                    @foreach($rows_third as $mt)
+                                                    <a class="dropdown-item" href="{{url($mt->href)}}">{{$mt->name}}</a>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                           
+                           
+                                        </li>
+                                        
+                                    @endif
+                                @empty
+                                @endforelse
+                                {{--<li class="nav-item active">
                                     <a class="nav-link" href="{{route('front')}}">Home <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -22,7 +55,7 @@
                                         About us
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="About">
-                                        <a class="dropdown-item" href="#">Overview</a>
+                                        <a class="dropdown-item" href="{{route('overview')}}">Overview</a>
                                         <a class="dropdown-item" href="#">Founder Chairman</a>
                                         <a class="dropdown-item" href="#">Message from Chairperson</a>
                                         <a class="dropdown-item" href="#">Message from Managing Director</a>
@@ -78,11 +111,11 @@
                                         <a class="dropdown-item" href="{{route('report')}}">Financial Reports</a>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul>--}}
 
-                            <form class="form-inline">
+                            <!-- <form class="form-inline">
                                 <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                 </nav>
