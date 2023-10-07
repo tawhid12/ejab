@@ -13,7 +13,7 @@ use App\Models\scroll_notice;
 use App\Models\photoGallaryCategory;
 use App\Models\video_notice;
 use App\Models\OurMember;
-use App\Models\setting;
+use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Partner;
 use App\Models\OurBusiness;
