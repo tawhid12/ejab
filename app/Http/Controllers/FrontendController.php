@@ -47,8 +47,8 @@ class FrontendController extends Controller
                         })->latest()->limit(12)->get();*/
         $about= About::first();
         $brands=Brand::get();
-        echo '<pre>';
-        print_r($brands);die;
+        /*echo '<pre>';
+        print_r($brands);die;*/
         $partners=Partner::orderBy('id','desc')->limit(3)->get();
         $our_business=OurBusiness::get();
         $blogs=Blog::get();
