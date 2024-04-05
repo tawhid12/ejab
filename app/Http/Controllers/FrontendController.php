@@ -46,13 +46,13 @@ class FrontendController extends Controller
                             $query->orWhereNull('unpublished_date');
                         })->latest()->limit(12)->get();*/
         $about= About::first();
-    
+        $brands=Brand::get();
         /*echo '<pre>';
         print_r($brands);die;*/
         $partners=Partner::orderBy('id','desc')->limit(3)->get();
         $our_business=OurBusiness::get();
         $blogs=Blog::get();
-        return view('front.home',compact('slider','scroll_notice','about','partners','our_business','blogs'));
+        return view('front.home',compact('slider','scroll_notice','about','brands','partners','our_business','blogs'));
     }
     /**
      * Show the form for creating a new resource.
