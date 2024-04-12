@@ -13,7 +13,7 @@
         <!-- header section strats -->
         @include('front.includes.nav')
         <div class="container animated">
-            <p class="joint-text">This Our Financial Statement</p>
+            <p class="joint-text">This Our Price Sensitive Information</p>
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
     <div class="service_section">
         <div class="container animated">
             <h4 class="card-title font-weight-bold text-center">
-                Financial Statement
+                Price Sensitive Information
             </h4>
             <div class="d-flex justify-content-center m-4">
                 <div class="border w-25 border-danger"></div>
@@ -37,7 +37,7 @@
                 @forelse($report as $r)
                 <tr>
                     <td>{{$r->title}}</td>
-                    <td><a target="_blank" href="{{asset('uploads/report/'.$r->upload_file)}}">Download</a></td>
+                    <td><a target="_blank" href="{{asset('uploads/report/'.$r->upload_file)}}">Download <i class="bi bi-file-pdf-fill"></i></a></td>
                 </tr>
                 @empty
                 <tr>

@@ -21,7 +21,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
-                                <!-- <th scope="col">{{__('Title')}}</th> -->
+                                <th scope="col">{{__('Type')}}</th>
+                                <th scope="col">{{__('Title')}}</th>
                                 <th scope="col">{{__('Publish Date')}}</th>
                                 <th scope="col">{{__('UnPublish Date')}}</th>
                                 <th scope="col">{{__('File')}}</th>
@@ -32,12 +33,16 @@
                             @forelse($reports as $r)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <!-- <th scope="row">{{ $r->title }}</th> -->
+                                <th scope="row">{{ $r->type?->title }}</th>
+                                <th scope="row">{{ $r->title }}</th>
                                 <td>{{$r->published_date}}</td>
                                 <td>{{$r->unpublished_date}}</td>
                                 <td><a width="100px" href="{{asset('uploads/report/'.$r->upload_file)}}">File</a></td>
 
                                 <td class="white-space-nowrap">
+                                    <a href="{{route(currentUser().'.report.edit',$r->id)}}">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
                                     <a href="javascript:void()" onclick="$('#form{{$r->id}}').submit()">
                                         <i class="bi bi-trash"></i>
                                     </a>

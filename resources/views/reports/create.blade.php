@@ -15,6 +15,31 @@
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" id="title" class="form-control" name="title">
+                                        @if($errors->has('title'))
+                                        <span class="text-danger"> {{ $errors->first('title') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="report_type_id">Type</label>
+                                        <select id="report_type_id" class="form-control" name="report_type_id">
+                                            <option value="">Select Type</option>
+                                            @forelse($reportType as $rt)
+                                                <option value="{{$rt->id}}">{{$rt->title}}</option>
+                                            @empty
+
+                                            @endforelse
+                                        </select>
+                                        @if($errors->has('title'))
+                                            <span class="text-danger"> {{ $errors->first('title') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
                                         <label for="Picture">Upload File</label>
                                         <input type="file" id="upload_file" class="form-control" name="upload_file">
                                         @if($errors->has('upload_file'))
@@ -30,14 +55,14 @@
                                 <div class="col-6">
                                     <label for="unpublic date"><b>{{__('Unpublished date')}}<span class="text-danger">*</span></b></label>
                                     <input type="date" value="{{ old('unpublished_date')}}" class="form-control" name="unpublished_date" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary my-2">Save</button>
 
-
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-end">
-                                            <button type="submit" class="btn btn-primary my-2">Save</button>
-
-                                        </div>
-                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

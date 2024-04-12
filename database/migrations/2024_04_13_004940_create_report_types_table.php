@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
+        Schema::create('report_types', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->bigInteger('report_type_id');
-            $table->string('upload_file');
-            $table->string('published_date');
-            $table->string('unpublished_date');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reports');
+        Schema::dropIfExists('report_types');
     }
 };

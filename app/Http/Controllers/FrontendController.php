@@ -168,9 +168,13 @@ class FrontendController extends Controller
         $data =  OurBusiness::get();
         return view('front.career',compact('data'));
     }
-    public function report(){
-        $report = Report::orderBy('id', 'desc')->first();
+    public function financialReport(){
+        $report = Report::where('report_type_id',2)->orderBy('id', 'desc')->get();
         return view('front.finace_report',compact('report'));
+    }
+    public function PSIReport(){
+        $report = Report::where('report_type_id',1)->orderBy('id', 'desc')->get();
+        return view('front.psi_report',compact('report'));
     }
     public function contact(){
         return view('front.contact');

@@ -5,9 +5,6 @@ use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\DashboardController as dash;
 
 
-
-
-
 use App\Http\Controllers\Settings\AdminUserController as admin;
 use App\Http\Controllers\Settings\UserProfileController as userprofile;
 
@@ -76,7 +73,8 @@ Route::get('/group-logo',[front::class,'groupLogo'])->name('groupLogo');
 
 Route::get('/career', [front::class,'career'])->name('career');
 Route::resource('car', career::class)->only(['store']);
-Route::get('/financial-report', [front::class,'report'])->name('report');
+Route::get('/financial-report', [front::class,'financialReport'])->name('financial_report');
+Route::get('/psi-report', [front::class,'PSIReport'])->name('psi_report');
 Route::get('/contact-us', [front::class,'contact'])->name('contact');
 Route::resource('contact', contact::class)->only(['store']);
 Route::get('/our-brands', [front::class,'brand'])->name('brand');

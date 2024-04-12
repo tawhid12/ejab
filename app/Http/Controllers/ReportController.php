@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Report;
+use App\Models\ReportType;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
@@ -28,7 +29,8 @@ class ReportController extends Controller
      */
     public function create()
     {
-        return view('reports.create');
+        $reportType = ReportType::get();
+        return view('reports.create',compact('reportType'));
     }
 
     /**
@@ -47,6 +49,8 @@ class ReportController extends Controller
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/report/'), $fileName);
                 $r->upload_file = $fileName;
+                $r->title = $request->title;
+                $r->report_type_id = $request->report_type_id;
                 $r->published_date = $request->published_date;
                 $r->unpublished_date = $request->unpublished_date;
                 if ($r->save()) {
@@ -56,7 +60,10 @@ class ReportController extends Controller
                     Toastr::warning('Please try Again!');
                     return redirect()->back();
                 }
-            }
+            }else {
+                    Toastr::warning('You have to choice a file to upload.');
+                    return redirect()->back();
+                }
         } catch (Exception $e) {
             Toastr::warning('Please try Again!');
             // dd($e);
@@ -83,7 +90,8 @@ class ReportController extends Controller
      */
     public function edit(Report $report)
     {
-        //
+        $reportType = ReportType::get();
+        return view('reports.edit',compact('reportType','report'));
     }
 
     /**
@@ -93,9 +101,42 @@ class ReportController extends Controller
      * @param  \App\Models\Report  $report
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Report $report)
+    public function update(Request $request, $id)
     {
-        //
+        try {
+            $r = Report::findOrFail(encryptor('decrypt',$id));
+
+            if ($request->file('upload_file')->isValid()) {
+
+                $path='uploads/report/'.$r->upload_file;
+                if (File::exists(public_path($path))) {
+                    File::delete(public_path($path));
+                }
+
+                $file = $request->file('upload_file');
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('uploads/report/'), $fileName);
+                $r->upload_file = $fileName;
+                $r->title = $request->title;
+                $r->report_type_id = $request->report_type_id;
+                $r->published_date = $request->published_date;
+                $r->unpublished_date = $request->unpublished_date;
+                if ($r->save()) {
+                    Toastr::success('Uploaded Successfully!');
+                    return redirect()->route(currentUser() . '.report.index');
+                } else {
+                    Toastr::warning('Please try Again!');
+                    return redirect()->back();
+                }
+            }else {
+                    Toastr::warning('You have to choice a file to upload.');
+                    return redirect()->back();
+                }
+        } catch (Exception $e) {
+            Toastr::warning('Please try Again!');
+            // dd($e);
+            return back()->withInput();
+        }
     }
 
     /**
