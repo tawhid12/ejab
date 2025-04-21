@@ -11,8 +11,11 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-
-    <title>@yield('pageTitle')|@yield('pageSubTitle')</title>
+    <title>Ejab Group</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('favicon/')}}/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon/')}}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('favicon/')}}/favicon-16x16.png">
+    <!--<title>@yield('pageTitle')|@yield('pageSubTitle')</title>-->
     @yield('meta')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <!-- slider stylesheet -->
@@ -108,6 +111,12 @@
 
         .sideber-nav .nav-link {
             color: #000;
+        }
+        .header-bg {
+            background-color: #3c363696;
+        }
+        marquee{
+            background-color: #3c363696;
         }
     </style>
     <script src="https://unpkg.com/scrollreveal"></script>
