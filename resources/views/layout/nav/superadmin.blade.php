@@ -71,19 +71,25 @@
                         </li>
                         <li class="sidebar-title">Brand &amp; Partner &amp; Business</li>
                         <li class="submenu-item sidebar-item">
-                            <a href="{{route(currentUser().'.brand.index')}}" class="sidebar-link">
+                            <a href="{{route(currentUser().'.brand.index')}}">
                                 <i class="bi bi-grid"></i>
                                 <span>Brand</span>
                             </a>
                         </li>
                         <li class="submenu-item sidebar-item">
-                            <a href="{{route(currentUser().'.partner.index')}}" class="sidebar-link">
+                            <a href="{{route(currentUser().'.product.index')}}">
+                                <i class="bi bi-grid"></i>
+                                <span>Product</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item sidebar-item">
+                            <a href="{{route(currentUser().'.partner.index')}}">
                                 <i class="bi bi-person-square"></i>
                                 <span>Partner</span>
                             </a>
                         </li>
                         <li class="submenu-item sidebar-item">
-                            <a href="{{route(currentUser().'.business.index')}}" class="sidebar-link">
+                            <a href="{{route(currentUser().'.business.index')}}">
                                 <i class="bi bi-hdd-network-fill"></i>
                                 <span>Business</span>
                             </a>

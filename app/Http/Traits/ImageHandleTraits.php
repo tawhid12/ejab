@@ -47,4 +47,16 @@ trait ImageHandleTraits{
         //$image->move($destinationPath, $imageName);
         return $imageName;
     }
+
+    public function saveOriginalImage($image, $path,$imageName)
+    {
+        $destinationPath = public_path("$path");
+        
+        if (!File::exists($destinationPath)) {
+            File::makeDirectory($destinationPath, 0775, true, true);
+        }
+        
+        $image->move($destinationPath, $imageName); 
+        return $imageName;
+    }
 }

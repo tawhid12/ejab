@@ -4,8 +4,7 @@
 @endsection
 @section('pageSubTitle',' HOME')
 @push('styles')
-<style>
-</style>
+<link rel="stylesheet" href="{{asset('front/css/brand.css')}}">
 @endpush
 @section('content')
 <div class="ejab-overlay">
@@ -39,25 +38,36 @@
 <div class="container py-4">
     <div class="row">
         <div class="col-lg-12 px-2 ">
-            <div class="row gallery photo">
-                @forelse ($brands as $b)
-                <div class="col-lg-4 text-center">
-                        <div class="card shadow-sm mb-3">
-                            <div class="card-gallery">
-                                <img class="img-fluid" src="{{asset('uploads/brand/thumb/'.$b->image)}}" alt="">
-                            </div>
+            <div class="featured_projects" unique-script-id="w-w-dm-id">
+                <div class="container-block bg">
+                    <p class="text-blk heading">Our Brands</p>
+                    <div class="responsive-container-block opt-cont">
+                        <p class="text-blk tab tab-active pb-0 mb-0" data-filter="all">All</p>
+                        @foreach ($our_business as $ob)
+                            <p class="text-blk tab pb-0 mb-0" data-filter="{{$ob->id}}">
+                                {{$ob->heading_text}}
+                            </p>
+                        @endforeach
+                    </div>
+                    <div class="responsive-container-block content mt-5 mb-5">
+                        @foreach($brands as $b)
+                           
+                        <div class="responsive-container-block img {{$b->our_business_id}}">
+                                <img class="im image-block" src="{{asset('uploads/brands/'.$b->image)}}">
+                            <a href="#" class="responsive-container-block overlay">
+                                
+                                    <p class="text-blk title">
+                                    {{$b->title}}
+                                    </p>
+                                    <p class="text-blk info">
+                                    {{$b->description}}
+                                    </p>
+                                
+                            </a>
                         </div>
-                </div>
-                @empty
-                <div class="col-lg-4 text-center">
-                    <div class="text-center">
-                        <h3 class="mt-5">There is no Brand uploaded yet</h3>
+                        @endforeach
                     </div>
                 </div>
-                @endforelse
-            </div>
-            <div class="my-3">
-                {!! $brands->links()!!}
             </div>
         </div>
     </div>
@@ -65,7 +75,22 @@
 @endsection
 @push('scripts')
 <script>
+$(document).ready(function() {
+  
+  $("[unique-script-id='w-w-dm-id'] .tab").click(function() {
+    const value = $(this).attr('data-filter');
+    if (value == 'all') {
+      $("[unique-script-id='w-w-dm-id'] .img").show('5000');
+    } else {
+      $("[unique-script-id='w-w-dm-id'] .img").not('.' + value).hide('5000');
+      $("[unique-script-id='w-w-dm-id'] .img").filter('.' + value).show('5000');
+    }
+  });
 
+  $("[unique-script-id='w-w-dm-id'] .tab").click(function() {
+    $(this).addClass('tab-active').siblings().removeClass('tab-active');
+  });
+})
 </script>
 
 @endpush

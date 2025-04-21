@@ -31,6 +31,7 @@ use App\Http\Controllers\FrontMenuController as frontMenu;
 use App\Http\Controllers\PageController as page;
 
 use App\Http\Controllers\BrandController as brand;
+use App\Http\Controllers\ProductController as product;
 use App\Http\Controllers\PartnerController as partner;
 use App\Http\Controllers\OurBusinessController as ourbs;
 use App\Http\Controllers\BlogController as blog;
@@ -79,7 +80,8 @@ Route::get('/contact-us', [front::class,'contact'])->name('contact');
 Route::resource('contact', contact::class)->only(['store']);
 Route::get('/our-brands', [front::class,'brand'])->name('brand');
 Route::get('/our-team', [front::class,'team'])->name('team');
-
+Route::get('/product', [front::class,'product'])->name('product');
+Route::get('/product-details/{barcode}', [front::class,'productDetails'])->name('productDetails');
 
 Route::group(['middleware' => 'unknownUser'], function () {
     Route::get('/admin-login', [auth::class,'signInForm'])->name('signInForm');
@@ -87,7 +89,6 @@ Route::group(['middleware' => 'unknownUser'], function () {
 });
 
 Route::get('/logout', [auth::class,'signOut'])->name('logOut');
-
 
 // photo and video gallery
 Route::get('photo_gallery', [media::class,'pGallery'])->name('pGallery');
@@ -111,8 +112,6 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::get('/change_password', [userprofile::class,'change_password'])->name('superadmin.change_password');
         Route::post('/change_password', [userprofile::class,'change_password_store'])->name('superadmin.change_password.store');
 
-       
-   
         Route::resource('adminuser', adminuser::class, ["as" => "superadmin"]);
         Route::resource('role', role::class,["as" => "superadmin"]);
 
@@ -129,16 +128,15 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::resource('vgalleryCat',vGalleryCat::class,['as'=>'superadmin']);
         Route::resource('scrollN',scrollN::class,['as'=>'superadmin']);
 
-
         Route::get('front_menu', [frontMenu::class, 'index'])->name('superadmin.front_menu.index');
         Route::post('menu_save_update/{id?}', [frontMenu::class, 'save_update'])->name('superadmin.front_menu.save');
         Route::get('front_menu/mss', [frontMenu::class, 'mss'])->name('superadmin.front_menu.mss');
         Route::get('front_menu/delete/{id}', [frontMenu::class, 'destroy'])->name('superadmin.front_menu.detroy');
 
-       
         Route::resource('page',page::class,['as'=>'superadmin']);
         Route::resource('aboutus',aboutus::class,['as'=>'superadmin']);
         Route::resource('brand',brand::class,['as'=>'superadmin']);
+        Route::resource('product',product::class,['as'=>'superadmin']);
         Route::resource('partner',partner::class,['as'=>'superadmin']);
         Route::resource('business',ourbs::class,['as'=>'superadmin']);
         Route::resource('blog',blog::class,['as'=>'superadmin']);

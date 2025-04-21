@@ -4,7 +4,85 @@
 @endsection
 @section('pageSubTitle','')
 @push('styles')
+<!-- Add Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
+<style>
+/* Previous styles remain the same */
+
+/* Owl Carousel Custom Styles */
+.product-carousel {
+    padding: 20px 0;
+}
+
+.owl-nav {
+    margin-top: 20px;
+}
+
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px !important;
+    height: 40px !important;
+    background: #9b87f5 !important;
+    border-radius: 50% !important;
+    color: white !important;
+}
+
+.owl-prev {
+    left: -20px;
+}
+
+.owl-next {
+    right: -20px;
+}
+
+.owl-prev:hover, .owl-next:hover {
+    background: #7E69AB !important;
+}
+
+.owl-dots {
+    margin-top: 20px;
+}
+
+.owl-dot span {
+    background: #ddd !important;
+}
+
+.owl-dot.active span {
+    background: #9b87f5 !important;
+}
+
+/* Ensure cards have equal height */
+.related-product-card {
+    height: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.related-product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.related-product-description {
+    flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+    .owl-prev {
+        left: -10px;
+    }
+    
+    .owl-next {
+        right: -10px;
+    }
+}
+</style>
 @endpush
 @section('content')
 <div class="about_area" style="background-image:url({{asset('uploads/page_image/thumb/'.$data->page_image)}})">
@@ -55,6 +133,61 @@
       </div>
     </div>
   </div>
+  <!-- Section Product -->
+  @forelse($data->brand as $brand)
+  <div class="py-5 mt-5 about-section-bg animated">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <!-- Replace the Related Products section with this -->
+            <section class="related-products">
+              <div class="container">
+                  <h2> Products</h2>
+                  <div class="owl-carousel product-carousel">
+                      @foreach($brand->products as $p)
+                      <div class="item">
+                          <div class="related-product-card">
+                              <img src="{{asset('uploads/products/thumb/'.$p->image)}}" alt="{{$p->name}}" class="related-product-image">
+                              
+                          </div>
+                      </div>
+                      @endforeach
+                      @foreach($brand->products as $p)
+                      <div class="item">
+                          <div class="related-product-card">
+                              <img src="{{asset('uploads/products/thumb/'.$p->image)}}" alt="{{$p->name}}" class="related-product-image">
+                              
+                          </div>
+                      </div>
+                      @endforeach
+                      @foreach($brand->products as $p)
+                      <div class="item">
+                          <div class="related-product-card">
+                              <img src="{{asset('uploads/products/thumb/'.$p->image)}}" alt="{{$p->name}}" class="related-product-image">
+                              
+                          </div>
+                      </div>
+                      @endforeach
+                  </div>
+              </div>
+            </section>
+            
+        </div>
+        <div class="col-sm-6 align-items-center d-flex">
+          <div>
+            <div class="mark-point"></div>
+            <p class="h1 text-info font-weight-bold">{{$brand->title}}</p>
+            <p class="my-5 text-justify">{{$brand->description}}</p>
+            <div class="my-4">
+              <a class="read-more" href="{{route('product')}}?brand={{$brand->id}}">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @empty
+  @endforelse
   <!-- Section Three -->
   <div class="py-5 bg-ligh animated">
     <div class="container">
@@ -149,15 +282,10 @@
   <!-- Section Six -->
   <div class="container my-5 animated">
     <div class="row">
-      <div>
+      <div class="col-sm-12">
         <p class="h1 text-info font-weight-bold text-center">Our Map</p>
         <div class="my-5">
-          {{$data->map}}
-          <!-- <iframe
-                width="1200px"
-                height="500px"
-                src="https://www.google.com/maps/d/embed?mid=1HpAFlqFQYlfehHayTWf49p3TNAgZjoM&ehbc=2E312F"
-              ></iframe> -->
+          {!!$data->map!!}
         </div>
       </div>
     </div>
@@ -186,20 +314,19 @@
   $(document).ready(function() {
     $(".owl-carousel").owlCarousel({
       autoPlay: 3000,
-      items: 4,
-      itemsDesktop: [1199, 3],
-      itemsDesktopSmall: [979, 3],
+      items: 3,
+      itemsDesktop: [1199, 2],
+      itemsDesktopSmall: [979, 1],
       center: true,
       nav: true,
       loop: true,
       responsive: {
         600: {
-          items: 4,
+          items: 1,
         },
       },
     });
+    
   });
 </script>
-</body>
 
-</html>

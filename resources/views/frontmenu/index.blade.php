@@ -47,6 +47,7 @@
                     'PSI Report'                => 'psi-report',
                     'Contact Us'                => 'contact-us',
                     'Our Brand'                 => 'our-brands',
+                    'Our Product'               => 'product',
                     'Our Team'                  => 'our-team',
                     'Photo Gallery'             => 'pGallery',
                     'Video Gallery'             => 'vGallery',

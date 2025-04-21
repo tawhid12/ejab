@@ -12,4 +12,7 @@ class OurBusiness extends Model
     {
         return 'page_slug';
     }
+    public function brand(){
+        return $this->hasMany(brand::class,'our_business_id');
+    }
 }

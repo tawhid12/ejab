@@ -111,6 +111,7 @@
         }
     </style>
     <script src="https://unpkg.com/scrollreveal"></script>
+    @stack('styles')
 </head>
 
 <body>

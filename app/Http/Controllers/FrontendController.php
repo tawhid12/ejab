@@ -22,6 +22,7 @@ use App\Models\Message;
 use Illuminate\Http\Request;
 use App\Http\Traits\ImageHandleTraits;
 use App\Models\Report;
+use App\Models\Product;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
 use DB;
@@ -161,7 +162,7 @@ class FrontendController extends Controller
     }
     public function singleBusinessPage($page_slug)
     {
-        $data = OurBusiness::where('page_slug', $page_slug)->firstOrFail();
+        $data = OurBusiness::with('brand','brand.products')->where('page_slug', $page_slug)->firstOrFail();
         return view('front.single_business_page',compact('data'));
     }
     public function career(){
@@ -180,8 +181,22 @@ class FrontendController extends Controller
         return view('front.contact');
     }
     public function brand(){
-        $brands = Brand::paginate(10);
-        return view('front.our_brand',compact('brands'));
+        $brands = Brand::all();
+        $our_business = OurBusiness::all();
+        return view('front.our_brand',compact('brands','our_business'));
+    }
+    public function product(Request $request){
+        if($request->has('brand')){
+            $products = Product::where('brand_id',$request->brand)->get();
+        }else{
+            $products = Product::paginate(12);
+        }
+        return view('front.product',compact('products'));
+    }
+    public function productDetails($barcode){
+        $product = Product::where('barcode',$barcode)->first();
+        $relatedProducts = Product::where('brand_id',$product->brand_id)->get();
+        return view('front.product_details',compact('product','relatedProducts'));
     }
     public function team(){
         $our_team = OurMember::all();
