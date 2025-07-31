@@ -6,6 +6,7 @@ use App\Models\Career;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Exception;
+use Illuminate\Support\Facades\Http;
 class CareerController extends Controller
 {
     /**
