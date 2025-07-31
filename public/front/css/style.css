@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Century Gothic", sans-serif;
   color: #0c0c0c;
   background-color: #ffffff;
 }
@@ -698,7 +698,10 @@ a:focus {
   margin-top: 10px;
 }
 .about-section-bg {
-  background-color: #e9401a1c;
+  background-color: RGB(151,214,131);
+}
+.text-info{
+    color:#000 !important;
 }
 .mark-point {
   font-weight: 500;

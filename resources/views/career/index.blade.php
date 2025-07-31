@@ -22,6 +22,7 @@
                             <tr>
                                 <th scope="col">{{__('#SL')}}</th>
                                 <th scope="col">{{__('Group Name')}}</th>
+                                <th scope="col">{{__('Position')}}</th>
                                 <th scope="col">{{__('File')}}</th>
                                 <th class="white-space-nowrap">{{__('Action') }}</th>
                             </tr>
@@ -30,7 +31,8 @@
                             @forelse($career as $c)
                             <tr>
                                 <th scope="row">{{ ++$loop->index }}</th>
-                                <th scope="row">{{ $c->bus_id }}</th>
+                                <th scope="row">{{ $c->company?->heading_text }}</th>
+                                <td>{{ $c->position }}</td>
                                 <td><a width="100px" href="{{asset('uploads/career/'.$c->upload_file)}}" >File</a></td>
                                 <td class="white-space-nowrap">
                                   

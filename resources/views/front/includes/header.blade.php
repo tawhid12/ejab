@@ -38,6 +38,8 @@
 
     <!-- responsive style -->
     <link href="{{asset('front/css/responsive.css')}}" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="{{ asset('/assets/extensions/laravel-toster/toastr.min.css') }}">
     <style>
         @media (min-width: 992px) {
             .navbar-expand-lg .navbar-nav {

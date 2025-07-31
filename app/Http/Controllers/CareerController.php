@@ -37,13 +37,33 @@ class CareerController extends Controller
     public function store(Request $request)
     {
         try {
+            $request->validate([
+                'company_id' => 'required',
+                'position' => 'required',
+                'upload_file' => 'required',
+                'g-recaptcha-response' => 'required',
+            ]);
+        
+            $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+                'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
+                'response' => $request->input('g-recaptcha-response'),
+                'remoteip' => $request->ip(),
+            ]);
+        
+            $result = $response->json();
+        
+            if (!$result['success']) {
+                return back()->withErrors(['captcha' => 'reCAPTCHA verification failed.']);
+            }
+
             $c = new Career;
            
             if ($request->file('upload_file')->isValid()) {
                 $file = $request->file('upload_file');
                 $fileName = time() . '.' . $file->getClientOriginalExtension();
                 $file->move(public_path('uploads/career/'), $fileName);
-                $c->bus_id = $request->bus_id;
+                $c->company_id = $request->company_id;
+                $c->position = $request->position;
                 $c->upload_file = $fileName;
                 if ($c->save()) {
                     Toastr::success('Submitted Successfully!');

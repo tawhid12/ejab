@@ -97,6 +97,7 @@
 <script type="text/javascript" src="{{asset('front/js/bootstrap.js')}}"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="{{ asset('/assets/extensions/laravel-toster/toastr.min.js') }}"></script>
 <script>
     $(document).ready(function() {
         $(".owl-carousel").owlCarousel({
@@ -121,6 +122,7 @@
 </script>
 <script src="{{asset('front/js/app.js')}}"></script>
 @stack('scripts')
+{!! Toastr::message() !!}
 </body>
 
 </html>

@@ -32,8 +32,8 @@
             <form class="form" method="post" enctype="multipart/form-data" action="{{route('car.store')}}">
                 @csrf
                 <div class="row">
-                    <div class="col-sm-6">
-                        <select name="bus_id" class="form-control form-control-sm" required>
+                    <div class="col-sm-4">
+                        <select name="company_id" class="form-control form-control-sm" required>
                             <option>Select Your Group</option>
                             @forelse($data as $b)
                             <option value="{{$b->id}}">{{$b->heading_text}}</option>
@@ -41,7 +41,10 @@
                             @endforelse
                         </select>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
+                        <input type="text" name="position" class="form-control form-control-sm" placeholder="Position" required>
+                    </div>
+                    <div class="col-sm-4">
                         <div class="input-group mb-3">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="inputGroupFile02" name="upload_file" required/>
@@ -52,12 +55,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6"></div>
+                    <div class="col-sm-6">
+                        <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_SITE') }}"></div>
+                    </div>
                     <div class="col-sm-6 d-flex justify-content-end mt-3">
                         <div class="btn-box">
                             <button type="submit" class="read-more"> Submit </button>
                         </div>
                     </div>
+                    @if($errors->has('captcha'))
+                    <span class="text-danger">{{ $errors->first('captcha') }}</span>
+                    @endif
 
                 </div>
             </form>
@@ -66,8 +74,6 @@
 </div>
 @endsection
 @push('scripts')
-<script>
-
-</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 @endpush

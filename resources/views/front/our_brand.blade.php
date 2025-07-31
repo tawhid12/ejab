@@ -11,30 +11,7 @@
     <!-- header section strats -->
     @include('front.includes.nav')
 </div>
-<section class="about-support">
-    <span class="shape"></span>
-    <span class="shape2"></span>
-    <span class="shape3"></span>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h3 class="mb-0">All Brand</h3>
-            </div>
-            <div class="col-lg-6">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-end bg-transparent mb-0">
-                        <li class="breadcrumb-item">
-                            <a href="#" class="breadcrumb-item router-link-active">Our</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <a href="">Brands</a>
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
+
 <div class="container py-4">
     <div class="row">
         <div class="col-lg-12 px-2 ">
@@ -51,20 +28,13 @@
                     </div>
                     <div class="responsive-container-block content mt-5 mb-5">
                         @foreach($brands as $b)
-                           
-                        <div class="responsive-container-block img {{$b->our_business_id}}">
+                            <div class="responsive-container-block img {{$b->our_business_id}}">
                                 <img class="im image-block" src="{{asset('uploads/brands/'.$b->image)}}">
-                            <a href="#" class="responsive-container-block overlay">
-                                
-                                    <p class="text-blk title">
-                                    {{$b->title}}
-                                    </p>
-                                    <p class="text-blk info">
-                                    {{$b->description}}
-                                    </p>
-                                
-                            </a>
-                        </div>
+                                <a href="#" class="responsive-container-block overlay">
+                                    <p class="text-blk title">{{$b->title}}</p>
+                                    <p class="text-blk info">{{$b->description}}</p>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
                 </div>
