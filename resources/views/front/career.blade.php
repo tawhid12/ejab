@@ -57,6 +57,9 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_SITE') }}"></div>
+                        @error('g-recaptcha-response')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="col-sm-6 d-flex justify-content-end mt-3">
                         <div class="btn-box">
