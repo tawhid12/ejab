@@ -38,6 +38,7 @@
                     placeholder="Message"
                     class="message_input" name="message" required
                   />
+                  <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
                   <button type="submit">Send</button>
                 </form>
               </div>
@@ -91,8 +92,12 @@
 
     @endsection
 @push('scripts')
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('GOOGLE_RECAPTCHA_SITE') }}"></script>
 <script>
-
+    grecaptcha.ready(function() {
+        grecaptcha.execute('{{ env('GOOGLE_RECAPTCHA_SITE') }}', {action: 'submit'}).then(function(token) {
+            document.getElementById('recaptchaResponse').value = token;
+        });
+    });
 </script>
-
 @endpush
