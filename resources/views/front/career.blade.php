@@ -61,6 +61,7 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+                    <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
                     <div class="col-sm-6 d-flex justify-content-end mt-3">
                         <div class="btn-box">
                             <button type="submit" class="read-more"> Submit </button>
@@ -77,6 +78,12 @@
 </div>
 @endsection
 @push('scripts')
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('GOOGLE_RECAPTCHA_SITE') }}"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('{{ env('GOOGLE_RECAPTCHA_SITE') }}', {action: 'submit'}).then(function(token) {
+            document.getElementById('recaptchaResponse').value = token;
+        });
+    });
+</script>
 @endpush
