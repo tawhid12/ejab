@@ -46,16 +46,21 @@ class CareerController extends Controller
             //     'g-recaptcha-response' => 'required',
             // ]);
         
-            $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-                'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
-                'response' => $request->input('g-recaptcha-response'),
-                'remoteip' => $request->ip(),
+            $request->validate([
+                'g-recaptcha-response' => 'required',
             ]);
-        
-            $result = $response->json();
-        
-            if (!$result['success']) {
-                return back()->withErrors(['captcha' => 'reCAPTCHA verification failed.']);
+
+            // Verify the reCAPTCHA response
+            $recaptchaSecret = env('GOOGLE_RECAPTCHA_SITE');
+            $recaptchaResponse = env('GOOGLE_RECAPTCHA_SECRET');
+
+            // Make the API request to Google to verify the reCAPTCHA response
+            $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
+            $responseData = json_decode($verify);
+
+            if (!$responseData->success || $responseData->score < 0.5) {
+                // If the reCAPTCHA verification failed, return an error message
+                return back()->withErrors(['captcha' => 'reCAPTCHA verification failed. Please try again.']);
             }
 
             $c = new Career;
