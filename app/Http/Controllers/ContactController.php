@@ -44,16 +44,19 @@ class ContactController extends Controller
                 'g-recaptcha-response' => 'required',
             ]);
 
-            // Verify the reCAPTCHA response
-            $recaptchaSecret = env('GOOGLE_RECAPTCHA_SITE');
-            $recaptchaResponse = env('GOOGLE_RECAPTCHA_SECRET');
+            // 1. Secret key from .env
+            $recaptchaSecret = env('GOOGLE_RECAPTCHA_SECRET');
 
-            // Make the API request to Google to verify the reCAPTCHA response
-            $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
+            // 2. Token received from form
+            $recaptchaResponse = $request->input('g-recaptcha-response');
+
+            // 3. Send verification request to Google
+            $verify = file_get_contents(
+                "https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}"
+            );
             $responseData = json_decode($verify);
 
             if (!$responseData->success || $responseData->score < 0.5) {
-                // If the reCAPTCHA verification failed, return an error message
                 return back()->withErrors(['captcha' => 'reCAPTCHA verification failed. Please try again.']);
             }
             
