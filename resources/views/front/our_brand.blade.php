@@ -5,6 +5,8 @@
 @section('pageSubTitle',' HOME')
 @push('styles')
 <link rel="stylesheet" href="{{asset('front/css/brand.css')}}">
+<!-- Magnific Popup core CSS file -->
+<link rel="stylesheet" href="{{asset('front/magnific-popup/dist/magnific-popup.css')}}">
 @endpush
 @section('content')
 <div class="ejab-overlay">
@@ -30,7 +32,7 @@
                         @foreach($brands as $b)
                             <div class="responsive-container-block img {{$b->our_business_id}}">
                                 <img class="im image-block" src="{{asset('uploads/brands/'.$b->image)}}">
-                                <a href="#" class="responsive-container-block overlay">
+                                <a href="javascript:void(0)" class="responsive-container-block overlay">
                                     <p class="text-blk title">{{$b->title}}</p>
                                     <p class="text-blk info">{{$b->description}}</p>
                                 </a>
@@ -44,9 +46,20 @@
 </div>
 @endsection
 @push('scripts')
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- Magnific Popup core JS file -->
+<script src="{{asset('front/magnific-popup/dist/jquery.magnific-popup.js')}}"></script>
 <script>
 $(document).ready(function() {
-  
+  $('.responsive-container-block img').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0, 1],
+    },
+  });
   $("[unique-script-id='w-w-dm-id'] .tab").click(function() {
     const value = $(this).attr('data-filter');
     if (value == 'all') {

@@ -1,0 +1,286 @@
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    /*height: 100vh;*/
+    height: auto;
+    z-index: 999;
+   /* background: #137ec4;*/
+   background: #e8e8e8;
+    color: #666;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #e8e8e8;
+    color: #137ec4;
+}
+
+#sidebar ul.components{
+    padding: 1px 0px;
+
+}
+
+ #sidebar ul.components li a, #sidebar ul.components li ul li a {
+   /* border-bottom: 1px solid #fff;*/
+  /*color:#555;*/
+}
+ #sidebar ul.components li.active a,#sidebar ul.components li a:hover, #sidebar ul.components li ul li a:hover {
+   
+    background: #fff;
+   
+}
+
+#sidebar ul.components li{
+    border-bottom: 1px solid #fff;
+  /*color:#555;*/
+}
+#sidebar ul.components li:last-child {
+  border-bottom: 0px;
+}
+
+#sidebar ul p {
+    color: #555;
+    padding: 10px;
+}
+
+
+#sidebar ul li a {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    display: block;
+  
+}
+#sidebar ul li a:hover, #sidebar ul li ul a:hover {
+    color: #137ec4;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"], {
+    color: #137ec4;
+    background: #fff;
+}
+
+
+#sidebar ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 50px !important;
+    background: #f3f3f3;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+
+
+/************************************* menu new ***********************************************/
+
+#sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+}
+#sidebar ul li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+#sidebar ul li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+/*#sidebar > ul > li > a {
+  color: #dddddd;
+  text-transform: uppercase;
+  display: block;
+  padding: 20px;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  background: #222222;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 300;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  position: relative;
+}
+#sidebar > ul > li:first-child > a {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#sidebar > ul > li:last-child > a {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom: 1px solid #000000;
+}
+#sidebar > ul > li:hover > a,
+#sidebar > ul > li.open > a,
+#sidebar > ul > li.active > a {
+  background: #151515;
+  color: #ffffff;
+}*/
+#sidebar ul > li.has-sub > a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+/*  border-top: 13px solid #000000;
+  border-botom: 13px solid transparent;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;*/
+  left: 0;
+  bottom: -13px;
+  bottom: 0px;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+#sidebar ul > li.has-sub > a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+ /* border-top: 13px solid #151515;
+  border-botom: 13px solid transparent;
+  border-left: 125px solid transparent;
+  border-right: 125px solid transparent;*/
+  left: 0;
+  bottom: -12px;
+  bottom: -1px;
+  z-index: 3;
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+#sidebar ul > li.has-sub::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: #555;
+  z-index: 2;
+  right: 20px;
+  top: 16px;
+  pointer-events: none;
+  color: #888;
+}
+
+#sidebar ul > li.open::after {
+  border-top-color: #555;
+}
+#sidebar ul > li:hover::after
+{
+  border-top-color: #137ec4;
+}
+
+#sidebar ul > li:active::after
+{
+  border-top-color: #555;
+}
+#sidebar ul > li.has-sub.open > a::after {
+  opacity: 1;
+  bottom: -13px;
+}
+#sidebar ul > li.has-sub.open > a::before {
+  opacity: 1;
+  bottom: -12px;
+}
+#sidebar ul ul {
+  display: none;
+}
+#sidebar ul ul li {
+  /*border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;*/
+}
+#sidebar ul ul li a {
+ /* background: #f1f1f1;
+  display: block;
+  position: relative;
+  font-size: 15px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #dddddd;
+  color: #777777;*/
+  font-weight: 300;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  -ms-transition: all 0.25s ease-in;
+  -o-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+#sidebar ul ul li:first-child > a {
+  padding-top: 18px;
+}
+#sidebar ul ul ul li {
+  border: 0;
+}
+#sidebar ul ul li:hover > a,
+#sidebar ul ul li.open > a,
+#sidebar ul ul li.active > a {
+  background: #e4e4e4;
+  color: #666666;
+}
+#sidebar ul ul > li.has-sub > a::after {
+  border-top: 13px solid #dddddd;
+}
+#sidebar ul ul > li.has-sub > a::before {
+  border-top: 13px solid #e4e4e4;
+}
+#sidebar ul ul ul li a {
+  padding-left: 30px;
+}
+#sidebar ul ul > li.has-sub::after {
+  top: 18.5px;
+  border-width: 6px;
+  border-top-color: #777777;
+}
+#sidebar ul ul > li:hover::after,
+#sidebar ul ul > li.active::after,
+#sidebar ul ul > li.open::after {
+  border-top-color: #666666;
+}

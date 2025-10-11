@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Brand;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Traits\ImageHandleTraits;
@@ -19,7 +20,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('product.index', compact('products'));
+        return view('backend.product.index', compact('products'));
     }
 
     /**
@@ -30,7 +31,9 @@ class ProductController extends Controller
     public function create()
     {
         $brands = Brand::all();
-        return view('product.create', compact('brands'));
+        $categories = ProductCategory::whereDoesntHave('children')->get();
+
+        return view('backend.product.create', compact('brands','categories'));
     }
 
     /**
@@ -45,6 +48,7 @@ class ProductController extends Controller
             $product = new Product();
             $product->name = $request->name;
             $product->brand_id = $request->brand_id;
+            $product->category_id = $request->category_id;
             $product->description = $request->description;
             $product->barcode = $request->barcode;
 
@@ -89,7 +93,8 @@ class ProductController extends Controller
     {
         $product = Product::find(encryptor('decrypt',$id));
         $brands = Brand::all();
-        return view('product.edit', compact('product', 'brands'));
+        $categories = ProductCategory::whereDoesntHave('children')->get();
+        return view('backend.product.edit', compact('product', 'brands', 'categories'));
     }
 
     /**
@@ -105,6 +110,7 @@ class ProductController extends Controller
             $product = Product::find(encryptor('decrypt',$id));
             $product->name = $request->name;
             $product->brand_id = $request->brand_id;
+            $product->category_id = $request->category_id;
             $product->description = $request->description;
             $product->barcode = $request->barcode;
 

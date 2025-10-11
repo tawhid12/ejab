@@ -12,9 +12,10 @@ class ReportCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $categories = ReportCategory::latest()->get();
+        return view('admin.report-categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ReportCategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.product-categories.create');
     }
 
     /**
@@ -35,7 +36,16 @@ class ReportCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'slug' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+        ]);
+
+        $category = ProductCategory::create($request->all());
+        return redirect()->route('admin.product-categories.index')->with('success', 'Product category created successfully');
     }
 
     /**

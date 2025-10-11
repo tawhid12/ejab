@@ -1,0 +1,1312 @@
+.contentpadding ul { margin-bottom: 10px; padding: 10px 20px 20px 20px;}
+ .contentpadding ul li{ line-height: 28px; list-style: disc; }
+    .home .overlay-desc {
+      background: rgba(0,0,0,0);
+      position: absolute;
+      bottom: 30px; left: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    .store-btn {background: #0a82d0;  margin-right: 10px;}
+    .main-nav li .store-btn a {background: #0a82d0; color: #fff; padding: 0px 10px; }
+    .main-nav li .store-btn a:hover {background: #0a82d0; color: #fff; }
+    .textshado { text-shadow: 2px 2px 1px #333; color:#fff; font-size:50px; font-weight:normal; }
+    .crossfade > figure {
+  animation: imageAnimation 36s linear infinite 0s;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center center;
+  color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+}
+
+.crossfade > figure:nth-child(1) {
+    animation-delay: 0s;
+  
+}
+.crossfade > figure:nth-child(2) {
+  animation-delay: 6s;
+  
+}
+.crossfade > figure:nth-child(3) {
+  animation-delay: 12s;
+  
+}
+.crossfade > figure:nth-child(4) {
+  animation-delay: 18s;
+  
+}
+.crossfade > figure:nth-child(5) {
+  animation-delay: 24s;
+ 
+}
+.crossfade > figure:nth-child(6) {
+  animation-delay: 30s;
+ 
+}
+     
+   .main-nav li {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    list-style: none;
+}
+
+.widget .widget-body .sidebar > ul.list-unstyled > li { list-style: none; list-style-type:none; }
+
+
+.sidebar > ul.list-unstyled > > li::before { background: none; }
+
+.main-nav .sub-menu li {
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+    .txtshado { color:#fff;  font-weight:normal; text-shadow: 3px 3px 2px #333; font-size: 30px; }
+    .wtext {color:#FFFFFF !important;  }
+    div b { font-weight: bold; }
+
+
+
+    .grey-section .wcolor p.wtext, .white-section .wcolor p.wtext{color:#FFFFFF !important;  }
+    p.wtext {color:#FFFFFF !important; text-shadow: 1px 1px 0px #333; font-size: 18px;  }
+    .work-item .icon img {
+    width: 60px;
+}
+
+
+.curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -78px;
+}
+
+
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:1;
+     margin-top: -55px;
+}
+
+
+.curve-container__curve {
+  
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    z-index:1;
+    display: block;
+}
+
+
+
+
+/* dropdown */
+
+.dropdown {
+            display: inline-block; 
+            position: relative;
+            width:100%;
+            z-index:1000000;
+           .cursor: pointer;
+}.dropdown-content {
+                   display: none;
+                   position: absolute;                  
+                   color:#fff;
+                   width: 100%; 
+                    z-index:1000000;
+                   background: #0076c0;                    
+         
+}
+.bottomborder {
+  display: none;
+  position: absolute;
+   width: 100%;
+   height: 100px;
+  background-image: url('{{ asset('assets/images/about/b.png') }}'); 
+                     background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-position: left bottom;
+                     background-size: cover;
+}
+
+.dropdown-content .contentpadding {
+     padding:15px 10px 35px 5px;
+     min-height:80px !important;
+     z-index:1000000;
+   
+}.dropdown:hover .dropdown-content{
+                                    display: block;
+}
+.dropdown:hover .bottomborder {
+                                    display: block; }
+.dropdown-content a {     
+                      display: block;
+                      padding: 10px;
+                      color: white;
+                      text-decoration: none;
+                      font-size: 16px;
+}.dropdown-content a:hover {
+                            background-color: #0076c0;
+                            color: #fff;
+}
+.dropdown h1, .dropdown h3 {
+ .cursor: pointer;   
+}
+
+
+.grey-section p.color-white p, .white-section p.color-white p, .grey-section p.color-white div, .grey-section p.color-white h6, .grey-section p.color-white h5, .grey-section p.color-white h4, .white-section p.color-white div, .white-section p.color-white h6, .white-section p.color-white h5, .white-section p.color-white h4 {
+      color: #fff  !important;
+      text-align: justify;
+}
+.grey-section p, .white-section p {
+    color: #ffffff !important;
+   /* text-align: justify;*/
+   }
+
+
+.white-section .blue-text p, .white-section .blue-text p.blue-text , .white-section p.blue-text {
+    color: #0076c0 !important;
+  /*  text-align: justify;*/
+}
+.ctitle span {
+    font-size:20px;
+   text-transform: capitalize;
+   letter-spacing: 1px !important;
+   line-height:22px;
+}
+#tabbed-nav-style2 ul li a  span {
+    font-size:14px;
+   text-transform: capitalize;
+   letter-spacing: 1px !important;
+   line-height:15px;
+}
+.descriptioncontent {
+  padding: 40px 40px 80px 40px; background: #0076c0; color:#fff;
+}
+.descriptioncontent2 {
+  padding: 40px 40px 80px 40px; background: #0076c0; color:#fff;
+}
+.descriptioncontent h6 {
+  margin-bottom: 12px;
+   font-weight: normal;
+  text-transform: none;
+    font-size: 20px;
+}
+.descriptioncontent p {
+  margin-bottom: 30px;
+   line-height: 25px;
+  font-family: 'MyriadPro-Regular';
+}
+.dcontent p {
+  margin-bottom: 40px;
+  line-height: 24px;
+  text-align: justify;
+}
+.descriptioncontent ul {margin-top:10px; list-style-position: inside;}
+.descriptioncontent ul li ul {margin-top:10px; margin-left: 20px; list-style-position: inside;}
+
+.descriptioncontent ul li { list-style-type: disc; padding-left: 0; margin-bottom: 5px;}
+#owl-related .item img { width: 80%; margin-left:-16px; }
+.white-section a.ccolor {color: #f6a157; }
+
+.dcontent ul {margin-top:-30px; list-style-position: inside;}
+.dcontent ul li ul {margin-top:0px; margin-left: 20px; list-style-position: inside;}
+
+.dcontent ul li { list-style-type: disc; padding-left: 0; margin-bottom: 5px; color: #0076c0; font-size: 14px; line-height: 16px;}
+span.hs2 { font-size: 22px; margin-bottom: 12px; }
+
+
+
+.missionbg {
+  padding: 250px 0; 
+  } 
+
+.padfix {padding: 250px 0;}
+
+#logo img {
+    max-width: 70%;
+    border: 0;
+    height: auto;
+}
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 105px;
+}
+
+.bannerpadding{padding: 320px 0;}
+
+/* Smartphones (portrait and landscape) ---------- */
+@media screen and (min-width: 320px) and (max-width: 480px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -20px;
+   }
+   .padfix {padding: 100px 0;}
+   .footercompanyt {
+    top: 3px;
+    left: 190px;
+}
+.footercompanyt {
+    top: 5px;
+    left: 86px;
+}
+.logo, a.logo:hover {
+    text-align: left;;
+}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.companyname {font-size: 15px; position: absolute; top: -10px; left: 75px;}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 0px;
+}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -14px;
+}
+
+.text-left { text-align:center !important; padding-left:5px;}
+}
+/* Smartphones (portrait) ---------- */
+@media screen and (max-width: 320px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -15px;
+   }
+   .padfix {padding: 80px 0;}
+   
+  .footercompanyt {
+    top: 3px;
+    left: 190px;
+}
+.widget-right {display: none;}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.widget-right {display: none;}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -10px;
+}
+   .companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 75px;
+}
+}
+/* Smartphones (landscape) ---------- */
+@media screen and (min-width: 321px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -20px;
+   }
+   .padfix {padding: 100px 0;}
+   .footercompanyt {
+    top: 5px;
+    left: 86px;
+    font-size: 11px;
+}
+.footercompanyt {
+    top: 5px;
+    left: 86px;
+}
+.logo, a.logo:hover {
+    text-align: left;;
+}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.companyname {font-size: 15px; position: absolute; top: -10px; left: 75px;}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 0px;
+}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -14px;
+}
+
+
+.text-left { text-align:center !important; padding-left:5px;}
+}
+@media screen and (min-width: 481px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -25px;
+   }
+   .padfix {padding: 100px 0;}
+  .footercompanyt {
+    top: 5px;
+    left: 86px;
+}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 75px;
+}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 0px;
+}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -20px;
+}
+
+
+}
+@media screen and (min-width: 591px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -28px;
+   }
+   .padfix {padding: 100px 0;}
+   
+  ..footercompanyt {
+    top: 5px;
+    left: 86px;
+    font-size: 11px;
+}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 78px;
+}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 0px;
+}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -20px;
+}
+
+}
+@media screen and (min-width: 690px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -32px;
+   }
+   .padfix {padding: 100px 0;}
+   #inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 10px;
+}
+  .footercompanyt {
+    top: 3px;
+    left: 220px;
+}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -20px;
+}
+.footercompanyt {
+    top: 5px;
+    left: 86px;
+    font-size: 11px;
+}
+}
+/* Tablets, iPads (portrait and landscape) ---------- */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -36px;
+   }
+   .padfix {padding: 100px 0;}
+   #inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 20px;
+}
+ .footercompanyt {
+    top: 5px;
+    left: 86px;
+    font-size: 11px;
+}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -32px;
+}
+}
+/* Tablets, iPads (portrait) ---------- */
+@media screen and (min-width: 768px){
+    /* styles */
+    .bannerpadding{padding: 320px 0;}
+   .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -36px;
+   }
+   .curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -32px;
+}
+   .padfix {padding: 100px 0;}
+  #inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 40px;
+}
+
+  .footercompanyt {
+    top: 5px;
+    left: 86px;
+    font-size: 11px;
+}
+
+.rltitle {margin-top: 20px;}
+}
+/* Tablets, iPads (portrait) ---------- */
+@media screen and (min-width: 920px){
+    /* styles */
+   .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -42px;
+   }
+   .curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -35px;
+}
+   .padfix {padding: 130px 0;}
+   #inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+.footercompanyt {
+    left: 120px;
+    font-size: 11px;
+    position: relative;
+    top: -35px;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.aboutfact .container, .aboutfact3 .container {
+    padding-left: 30px;
+}
+  .footercompanyt {
+    top: 3px;
+    left: 86px;
+    font-size: 11px;
+}
+.text-left {
+    text-align: left !important;
+    padding-left: 5px;
+}
+
+}
+/* Tablets, iPads (landscape) ---------- */
+@media screen and (min-width: 1024px){
+    /* styles */
+     .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -48px;
+   }
+     .footercompanyt {
+    top: -35px;
+    left: 90px;
+    font-size: 11px;
+   .curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -42px;
+}
+   .padfix {padding: 200px 0;}
+   .missionbg {
+    padding: 165px 0; 
+  } 
+  .ap-link {
+    padding: 40px 30px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 70px;
+    line-height: 70px;
+}
+  .valuesicon ul li { width: 48%; text-align: center;}
+  .valuesicon ul li img{ width: 50%; margin-top:110px; 20px; text-align: center;}
+ 
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 80px;
+}
+.rltitle {margin-top: 0px;}
+
+}
+/* Desktops and laptops ---------- */
+@media screen and (min-width: 1224px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -58px;
+}
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -55px;
+}
+.padfix {padding: 200px 0;}
+   .missionbg {
+    padding: 190px 0; 
+  } 
+  .ap-link {
+    padding: 60px 30px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 70px;
+    line-height: 70px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+    top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 105px;
+}
+}
+@media screen and (min-width: 1320px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -64px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 210px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+@media screen and (min-width: 1400px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -65px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 210px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+/* Desktops and laptops ---------- */
+@media screen and (min-width: 1500px){
+    /* styles */
+     
+     .curve-container,.curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one  {
+    background-color:none;
+    z-index:1;
+     margin-top: -68px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 230px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+  top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+/* Desktops and laptops ---------- */
+@media screen and (min-width: 1600px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -75px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 250px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+/* Large screens ---------- */
+@media screen and (min-width: 1824px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -78px;
+   }
+     .padfix {padding: 300px 0;}
+   .missionbg {
+    padding: 280px 0; 
+  } 
+  .ap-link {
+    padding: 100px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+
+@media screen and (min-width: 1920px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -85px;
+   }
+     .padfix {padding: 350px 0;}
+   .missionbg {
+    padding: 300px 0; 
+  } 
+  .ap-link {
+    padding: 120px 100px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 100px;
+    line-height: 100px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+
+@media screen and (min-width: 2100px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -95px;
+   }
+
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:2;
+     margin-top: -55px;
+}
+     .padfix {padding: 360px 0;}
+   .missionbg {
+    padding: 300px 0; 
+  } 
+  .ap-link {
+    padding: 150px 100px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 120px;
+    line-height: 120px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+
+@media screen and (max-width: 992px){
+.bannerpadding{padding: 180px 0;}
+
+.container .columns.lborder {
+  border-left:0px solid #0076c0 ; margin-top:30px; padding-left:0px; text-align: center;
+}
+}
+@media screen and (max-width: 768px){
+.bannerpadding{padding: 180px 0;}
+}
+
+.container .columns.lborder {
+  border-left:1px solid #0076c0 ; margin-top:130px;  padding-left:40px; text-align: left;;
+}
+ ::-webkit-input-placeholder {
+    color:#fff;
+}
+
+::-moz-placeholder {
+    color:#fff;
+}
+
+::-ms-placeholder {
+    color:#fff;
+}
+
+::placeholder {
+    color:#fff;
+}
+.footer-cr a img {vertical-align: middle;}

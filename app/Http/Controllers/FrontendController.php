@@ -13,6 +13,7 @@ use App\Models\scroll_notice;
 use App\Models\photoGallaryCategory;
 use App\Models\video_notice;
 use App\Models\OurMember;
+use App\Models\ProductCategory;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Partner;
@@ -185,13 +186,12 @@ class FrontendController extends Controller
         $our_business = OurBusiness::all();
         return view('front.our_brand',compact('brands','our_business'));
     }
-    public function product(Request $request){
-        if($request->has('brand')){
-            $products = Product::where('brand_id',$request->brand)->get();
-        }else{
-            $products = Product::paginate(12);
-        }
-        return view('front.product',compact('products'));
+    public function product($slug){
+        $category = ProductCategory::where('slug',$slug)->first();
+        
+        $products = Product::where('category_id',$category->id)->paginate(12);
+        
+        return view('front.product',compact('products','category'));
     }
     public function productDetails($barcode){
         $product = Product::where('barcode',$barcode)->first();

@@ -77,6 +77,12 @@
                             </a>
                         </li>
                         <li class="submenu-item sidebar-item">
+                            <a href="{{route(currentUser().'.product-category.index')}}">
+                                <i class="bi bi-grid"></i>
+                                <span>Product Category</span>
+                            </a>
+                        </li>
+                        <li class="submenu-item sidebar-item">
                             <a href="{{route(currentUser().'.product.index')}}">
                                 <i class="bi bi-grid"></i>
                                 <span>Product</span>

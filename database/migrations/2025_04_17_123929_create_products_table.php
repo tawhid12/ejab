@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('brand_id')->nullable();
+            $table->bigInteger('category_id')->nullable();
             $table->string('description')->nullable();
             $table->string('barcode')->nullable();
             $table->string('image')->nullable();

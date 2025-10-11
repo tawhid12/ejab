@@ -1,0 +1,1360 @@
+.home .overlay-desc {
+      background: rgba(0,0,0,0);
+      position: absolute;
+      bottom: 30px; left: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+    .textshado { text-shadow: 5px 5px 3px #333; color:#fff; font-size:40px; font-weight:normal; margin-bottom:50px; margin-left:30px; }
+    .crossfade > figure {
+  animation: imageAnimation 36s linear infinite 0s;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center center;
+  color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+}
+
+.crossfade > figure:nth-child(1) {
+    animation-delay: 0s;
+  
+}
+.crossfade > figure:nth-child(2) {
+  animation-delay: 6s;
+  
+}
+.crossfade > figure:nth-child(3) {
+  animation-delay: 12s;
+  
+}
+.crossfade > figure:nth-child(4) {
+  animation-delay: 18s;
+  
+}
+.crossfade > figure:nth-child(5) {
+  animation-delay: 24s;
+ 
+}
+.crossfade > figure:nth-child(6) {
+  animation-delay: 30s;
+ 
+}
+
+.textshado { text-shadow: 2px 2px 1px #333; color:#fff; font-size:50px; font-weight:normal;   }
+.widget .widget-body .sidebar > ul.list-unstyled > li { list-style: none; list-style-type:none; }
+
+.store-btn {background: #0a82d0;  margin-right: 10px;}
+    .main-nav li .store-btn a {background: #0a82d0; color: #fff; padding: 0px 10px; }
+    .main-nav li .store-btn a:hover {background: #0a82d0; color: #fff; }
+.sidebar > ul.list-unstyled > > li::before { background: none; }
+
+.main-nav .sub-menu li {
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+    .txtshado { color:#fff;  font-weight:normal; text-shadow: 3px 3px 2px #333; font-size: 30px; }
+    .wtext {color:#FFFFFF !important;  }
+    div b { font-weight: bold; }
+
+
+
+    .grey-section .wcolor p.wtext, .white-section .wcolor p.wtext{color:#FFFFFF !important;  }
+    p.wtext {color:#FFFFFF !important; text-shadow: 1px 1px 0px #333; font-size: 18px;  }
+    .work-item .icon img {
+    width: 60px;
+}
+
+.curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -78px;
+}
+
+
+.curve-container-inner .container-fixed.curve-one, .curve-container-inner .container-fluid.curve-one, .n20-inner {
+    background-color:none;
+    z-index:1;
+     margin-top: -55px;
+}
+
+
+.curve-container__curve {
+  
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    z-index:1;
+    display: block;
+}
+
+
+ .curve-container-inner2{
+    background-color:none;
+    z-index:1;
+     margin-top: -155px;
+}
+
+
+.curve-container-inner2__curve {
+  
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    z-index:1;
+    display: block;
+}
+
+
+
+/******************************************* curve end ********************************/
+
+.grey-section p, .white-section p {
+    color: #0076c0  !important;
+}
+.environment ul li {
+     color: #0076c0  !important;
+}
+
+.missionbg {
+  padding: 280px 0; 
+  } 
+
+.padfix {padding: 250px 0;}
+.cmbg { padding: 100px 0 280px 0; }  
+.cmphoto {display: none;}
+#logo img {
+    max-width: 70%;
+    border: 0;
+    height: auto;
+}
+/*
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: 0px;
+    left: 105px;
+}
+*/
+
+/* Smartphones (portrait and landscape) ---------- */
+@media screen and (min-width: 320px) and (max-width: 480px){
+    /* styles */
+  
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -20px;
+   }
+   .companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -2px;
+    left: 75px;
+}
+.footercompanyt {
+    top: 5px;
+    left: 86px;
+}
+.logo, a.logo:hover {
+    text-align: left;;
+}
+   .padfix {padding: 100px 0;}
+   .missionbg {
+  padding: 150px 0;
+  margin-bottom: 40px; 
+  } 
+  .valuesicon ul li { width: 100%;}
+  .valuesicon ul li { width: 80%; margin-top: 30px;}
+  
+.cmbg { padding: 10px 0 10px 0;
+ background-image: none !important; background-color:#fff; 
+ }
+.curve-container-inner2{
+  display: none;   
+}
+.sp-top-bottom60 {
+    padding: 20px 0 !important;
+}
+.hs0 {
+    font-size: 8px;
+    line-height: 12px;
+}
+.cmmessage p{ font-size: 9px;
+    line-height: 12px; }
+.white-section .cmmessage p { margin-bottom: 8px; }
+p { margin-bottom: 8px; }
+.cmphoto {display: block;}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+   height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+}
+/* Smartphones (portrait) ---------- */
+@media screen and (max-width: 320px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -10px;
+   }
+   .padfix {padding: 80px 0;}
+   .missionbg {
+  padding: 120px 0;
+  margin-bottom: 40px; 
+  } 
+  .valuesicon ul li { width: 100%;}
+  .valuesicon ul li { width: 60%; margin-top: 30px;}
+  .footercompanyt {
+    top: 5px;
+    left: 86px;
+}
+.logo, a.logo:hover {
+    text-align: left;;
+}
+.cmbg { padding: 10px 0 10px 0;
+ background-image: none !important; background-color:#fff; 
+ }
+.curve-container-inner2{
+  display: none;   
+}
+.sp-top-bottom60 {
+    padding: 20px 0 !important;
+}
+.hs0 {
+    font-size: 8px;
+    line-height: 12px;
+}
+.cmmessage p{font-size: 9px;
+    line-height: 12px;}
+.white-section .cmmessage p { margin-bottom: 8px; }
+p { margin-bottom: 8px; }
+
+}
+.cmphoto {display: block;}
+widget-right {display: none;}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.widget-right {display: none;}
+.companyname {
+    font-size: 13px;
+    position: absolute;
+    top: -10px;
+    left: 75px;
+}
+}
+/* Smartphones (landscape) ---------- */
+@media screen and (min-width: 321px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -20px;
+   }
+   .companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 75px;
+}
+.footercompanyt {
+    top: 5px;
+    left: 86px;
+}
+.logo, a.logo:hover {
+    text-align: left;;
+}
+   .padfix {padding: 100px 0;}
+   .missionbg {
+  padding: 150px 0;
+  margin-bottom: 40px; 
+  } 
+  .valuesicon ul li { width: 100%;}
+  .valuesicon ul li { width: 80%; margin-top: 30px;}
+  
+.cmbg { padding: 10px 0 10px 0;
+ background-image: none !important; background-color:#fff; 
+ }
+.curve-container-inner2{
+  display: none;   
+}
+.sp-top-bottom60 {
+    padding: 20px 0 !important;
+}
+.hs0 {
+    font-size: 8px;
+    line-height: 12px;
+}
+.cmmessage p{ font-size: 9px;
+    line-height: 12px; }
+.white-section .cmmessage p { margin-bottom: 8px; }
+p { margin-bottom: 8px; }
+.cmphoto {display: block;}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+   height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+}
+@media screen and (min-width: 481px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -25px;
+   }
+   .padfix {padding: 30px 0;}
+   .missionbg {
+  padding: 190px 0;
+  margin-bottom: 40px; 
+  } 
+  .valuesicon ul li { width: 100%;}
+  .valuesicon ul li { width: 100%; margin-top: 20px;}
+ .footercompanyt {
+    top: 5px;
+    left: 86px;
+}
+
+.sp-top-bottom60 {
+    padding: 20px 0 !important;
+}
+.container .eight.columns.cmmessage {
+  width: 250px;
+
+background: -moz-linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+padding: 0 10px 40px 0;
+}
+.cmbg { padding: 20px 0 400px 0; }
+.curve-container-inner2{
+    background-color:none;
+    z-index:1;
+     margin-top: -460px;
+}
+.hs0 {
+    font-size: 8px;
+    line-height: 12px;
+}
+.cmmessage p{font-size: 7px;
+    line-height: 10px;}
+.white-section .cmmessage p { margin-bottom: 5px; }
+p { margin-bottom: 8px; }
+.container.cmsg {padding: 0 2%;}
+
+.cmphoto {display: none;}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 75px;
+}
+}
+@media screen and (min-width: 591px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -28px;
+   }
+   .padfix {padding: 100px 0;}
+   .missionbg {
+  padding: 240px 0;
+  margin-bottom: 40px; 
+  } 
+  .valuesicon ul li { width: 100%;}
+  .valuesicon ul li { width: 100%; margin-top: 20px;}
+  
+.footercompanyt {
+    top: 5px;
+    left: 86px;
+    font-size: 11px;
+}
+.container .eight.columns.cmmessage {
+  width: 250px;
+
+background: -moz-linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+padding: 0 10px 40px 0;
+}
+.cmbg { padding: 30px 0 300px 0; }
+.curve-container-inner2{
+    background-color:none;
+    z-index:1;
+     margin-top: -360px;
+}
+.hs0 {
+    font-size: 8px;
+    line-height: 12px;
+}
+.cmmessage p{font-size: 9px;
+    line-height: 12px;}
+.white-section .cmmessage p { margin-bottom: 8px; }
+p { margin-bottom: 8px; }
+.container.cmsg {padding: 0 2%;}
+.cmphoto {display: none;}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    display: block;   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 78px;
+}
+}
+@media screen and (min-width: 690px){
+    /* styles */
+
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -32px;
+   }
+   .padfix {padding: 40px 0;}
+   .missionbg {
+  padding: 235px 0;
+  margin-bottom: 30px; 
+  } 
+  .valuesicon ul li { width: 100%;}
+  .valuesicon ul li { width: 100%; margin-top: 20px;}
+  .footercompanyt {
+    top: 5px;
+    left: 86px;
+    font-size: 11px;
+}
+.container .eight.columns.cmmessage {
+  width: 250px;
+
+background: -moz-linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+padding: 0 10px 40px 0;
+}
+.cmbg { padding: 30px 0 300px 0; }
+.curve-container-inner2{
+    background-color:none;
+    z-index:1;
+     margin-top: -360px;
+}
+.hs0 {
+    font-size: 8px;
+    line-height: 12px;
+}
+.cmmessage p{font-size: 9px;
+    line-height: 12px;}
+.white-section .cmmessage p { margin-bottom: 8px; }
+p { margin-bottom: 8px; }
+.container.cmsg {padding: 0 2%;}
+.cmphoto {display: none;}
+ #inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+}
+/* Tablets, iPads (portrait and landscape) ---------- */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -36px;
+   }
+   .padfix {padding: 100px 0;}
+   .missionbg {
+    padding: 142px 0; 
+    margin-bottom: 0;
+  } 
+  .ap-link {
+    padding: 20px 20px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 60px;
+    line-height: 60px;
+}
+  .valuesicon ul li { width: 48%; text-align: center;}
+  .valuesicon ul li { width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+    top: 3px;
+    left: 156px;
+    font-size: 11px;
+}
+ #inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+}
+/* Tablets, iPads (portrait) ---------- */
+@media screen and (min-width: 768px){
+    /* styles */
+   .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -36px;
+   }
+   .padfix {padding: 100px 0;}
+   .missionbg {
+    padding: 142px 0; 
+    margin-bottom: 0;
+  } 
+  .ap-link {
+    padding: 20px 20px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 60px;
+    line-height: 60px;
+}
+  .valuesicon ul li { width: 48%; text-align: center;}
+  .valuesicon ul li { width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+    top: 3px;
+    left: 156px;
+    font-size: 11px;
+}
+.cmbg { padding: 40px 0 280px 0; }
+.curve-container-inner2{
+    background-color:none;
+    z-index:1;
+     margin-top: -285px;
+}
+.hs0 {
+    font-size: 10px;
+    line-height: 13px;
+}
+.container .eight.columns.cmmessage {
+  width: 450px;
+   background: none !important;
+  }
+.white-section .cmmessage p { margin-bottom: 10px; }
+p { margin-bottom: 10px; }
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+}
+/* Tablets, iPads (portrait) ---------- */
+@media screen and (min-width: 920px){
+    /* styles */
+   .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -42px;
+   }
+   .padfix {padding: 130px 0;}
+   .missionbg {
+    padding: 160px 0; 
+    margin-bottom: 0;
+  } 
+  .footercompanyt {
+    left: 86px;
+    font-size: 11px;
+    position: relative;
+    top: -3px;
+}
+  .ap-link {
+    padding: 20px 20px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 60px;
+    line-height: 60px;
+}
+  .valuesicon ul li { width: 48%; text-align: center;}
+  .valuesicon ul li { width: 60%; margin-top: 20px; text-align: center;}
+ 
+.cmbg { padding: 40px 0 280px 0; }
+.curve-container-inner2{
+    background-color:none;
+    z-index:1;
+     margin-top: -285px;
+}
+.hs0 {
+    font-size: 13px;
+    line-height: 20px;
+}
+.cmmessage p{font-size: 13px;
+    line-height: 20px;}
+    .container.cmsg {
+    padding: 0px 5%;
+}
+#inner-header {
+    position: relative;
+    height: 60px;
+    z-index: 10;
+}
+#logo {
+  float: left;
+  line-height: 60px;
+  margin-left:20px;
+}
+.widget-right {
+    float: right;
+   
+    height: 100%;
+    margin-top: 0;
+    float: right;
+    line-height: 60px;
+    margin-right: 20px;
+}
+.header-elem .topSearchForm {
+  top:10px;
+}
+#inner-header .header-elem:first-child::before {
+    content: '';
+    height: 15px;
+    border-left: none;      
+    left: 10px;
+    position: absolute;
+    top:20px;
+    margin-top: 0px;
+}
+.topSearchForm .textfield {
+  padding: 5px 10px;
+  font-size: 12px;
+  width: 200px;
+  color: #fff;
+  height: 30px
+}
+.light-header .selectdiv::after {
+    content: '>';
+    font: 14px "Consolas", monospace;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: -3px;
+    top: 0px;
+    padding: 0px 5px 15px;
+    position: absolute;
+    pointer-events: none;
+    cursor: pointer;
+}
+}
+/* Tablets, iPads (landscape) ---------- */
+@media screen and (min-width: 1024px){
+    /* styles */
+     .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -48px;
+   }
+   .padfix {padding: 200px 0;}
+   .missionbg {
+    padding: 185px 0; 
+  } 
+    .footercompanyt {
+    top: -35px;
+    left: 90px;
+    font-size: 11px;
+  .ap-link {
+    padding: 40px 30px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 70px;
+    line-height: 70px;
+}
+  .valuesicon ul li { width: 48%; text-align: center;}
+  .valuesicon ul li img{ width: 50%; margin-top: 20px; text-align: center;}
+  
+.cmbg { padding: 60px 0 280px 0; }
+.curve-container-inner2{
+    background-color:none;
+    z-index:2;
+     margin-top: -260px;
+}
+
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 80px;
+}
+}
+/* Desktops and laptops ---------- */
+@media screen and (min-width: 1224px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -58px;
+}
+.padfix {padding: 200px 0;}
+   .missionbg {
+    padding: 210px 0; 
+  } 
+  .ap-link {
+    padding: 60px 30px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 5px;
+    position: relative;
+    margin-bottom: 5px;
+    font-size: 70px;
+    line-height: 70px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 11px;
+}
+.container .eight.columns.cmmessage {
+    width: 580px;
+}
+.container.cmsg {
+    padding: 0px;
+}
+.white-section .cmmessage p {
+    margin-bottom: 15px;
+}
+.cmmessage p {
+    font-size: 15px;
+    line-height: 25px;
+}
+.companyname {
+    font-size: 15px;
+    position: absolute;
+    top: -10px;
+    left: 105px;
+}
+}
+@media screen and (min-width: 1320px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -64px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 230px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+@media screen and (min-width: 1400px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -65px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 235px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+/* Desktops and laptops ---------- */
+@media screen and (min-width: 1500px){
+    /* styles */
+     
+     .curve-container,.curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one  {
+    background-color:none;
+    z-index:1;
+     margin-top: -68px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 260px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+}
+/* Desktops and laptops ---------- */
+@media screen and (min-width: 1600px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -75px;
+}
+.padfix {padding: 250px 0;}
+   .missionbg {
+    padding: 280px 0; 
+  } 
+  .ap-link {
+    padding: 80px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+.cmbg { padding: 120px 0 280px 0; }
+.curve-container-inner2{
+    background-color:none;
+    z-index:2;
+     margin-top: -155px;
+}
+}
+/* Large screens ---------- */
+@media screen and (min-width: 1824px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -78px;
+   }
+     .padfix {padding: 300px 0;}
+   .missionbg {
+    padding: 310px 0; 
+  } 
+  .ap-link {
+    padding: 100px 40px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 80px;
+    line-height: 80px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+.cmbg { padding: 120px 0 280px 0; }
+}
+
+@media screen and (min-width: 1920px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -85px;
+   }
+     .padfix {padding: 350px 0;}
+   .missionbg {
+    padding: 330px 0; 
+  } 
+  .ap-link {
+    padding: 120px 100px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 100px;
+    line-height: 100px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+   top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+.cmbg { padding: 100px 0 280px 0; }
+}
+
+@media screen and (min-width: 2100px){
+    /* styles */
+    .curve-container .container-fixed.curve-one, .curve-container .container-fluid.curve-one, .n20 {
+    background-color:none;
+    z-index:1;
+     margin-top: -95px;
+   }
+     .padfix {padding: 360px 0;}
+   .missionbg {
+    padding: 380px 0; 
+  } 
+  .ap-link {
+    padding: 150px 100px !important;
+}
+.ap-link .icon-box {
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 120px;
+    line-height: 120px;
+}
+  .valuesicon ul li { width: 19%; text-align: center;}
+  .valuesicon ul li img{ width: 60%; margin-top: 20px; text-align: center;}
+  .footercompanyt {
+    top: -35px;
+    left: 90px;
+    font-size: 15px;
+}
+.cmbg { padding: 120px 0 280px 0; }
+}
+ ::-webkit-input-placeholder {
+    color:#0076c0;
+}
+
+::-moz-placeholder {
+    color:#0076c0;
+}
+
+::-ms-placeholder {
+    color:#0076c0;
+}
+
+::placeholder {
+    color:#0076c0;
+}
+.footer-cr a img {vertical-align: middle;}

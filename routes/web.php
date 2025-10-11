@@ -32,6 +32,7 @@ use App\Http\Controllers\PageController as page;
 
 use App\Http\Controllers\BrandController as brand;
 use App\Http\Controllers\ProductController as product;
+use App\Http\Controllers\ProductCategoryController as productCategory;
 use App\Http\Controllers\PartnerController as partner;
 use App\Http\Controllers\OurBusinessController as ourbs;
 use App\Http\Controllers\BlogController as blog;
@@ -76,11 +77,12 @@ Route::get('/career', [front::class,'career'])->name('career');
 Route::resource('car', career::class)->only(['store']);
 Route::get('/financial-report', [front::class,'financialReport'])->name('financial_report');
 Route::get('/psi-report', [front::class,'PSIReport'])->name('psi_report');
-Route::get('/contact-us', [front::class,'contact'])->name('contact');
+Route::get('/contact-us', [front::class,'contact'])->name('front.contact');
 Route::resource('contact', contact::class)->only(['store']);
 Route::get('/our-brands', [front::class,'brand'])->name('brand');
 Route::get('/our-team', [front::class,'team'])->name('team');
-Route::get('/product', [front::class,'product'])->name('product');
+//Route::get('/product', [front::class,'product'])->name('product');
+Route::get('/products/{slug}', [front::class,'product'])->name('front.product');
 Route::get('/product-details/{barcode}', [front::class,'productDetails'])->name('productDetails');
 
 Route::group(['middleware' => 'unknownUser'], function () {
@@ -137,6 +139,7 @@ Route::group(['middleware' => 'isSuperadmin'], function () {
         Route::resource('aboutus',aboutus::class,['as'=>'superadmin']);
         Route::resource('brand',brand::class,['as'=>'superadmin']);
         Route::resource('product',product::class,['as'=>'superadmin']);
+        Route::resource('product-category',productCategory::class,['as'=>'superadmin']);
         Route::resource('partner',partner::class,['as'=>'superadmin']);
         Route::resource('business',ourbs::class,['as'=>'superadmin']);
         Route::resource('blog',blog::class,['as'=>'superadmin']);

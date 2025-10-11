@@ -1,374 +1,192 @@
 @extends('front.layout.front-layout')
-@section('pageTitle','EJAB Group')
-@section('meta')
-@endsection
-@section('pageSubTitle',' HOME')
+@section('title','Products')
+@section('keywords',"Products, Ejab Group, Industries, Bangladesh")
+@section('description',"Products, Ejab Group, Industries, Bangladesh")
 @push('styles')
-<style>
-  /* Reset and base styles */
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+	<style>
+		#product-carousels { height: 320px; position: relative; }
+		.product-carousel .item { position: relative; display: flex; flex-direction: column; justify-content: flex-start; border-radius: 12px; overflow: hidden; height: 300px; background: #f9f9f9; transition: transform 0.3s ease; }
+		.product-carousel .item img { width: 100%; height: 220px; object-fit: contain; border-radius: 12px; cursor: pointer; transition: transform 0.3s ease; }
+		/* Hover Zoom */
+		.product-carousel .item:hover img { transform: scale(1.1); }
 
+		.product-carousel .item p { margin-top: 8px; font-size: 1rem; text-align: center; flex-shrink: 0; }
 
+		.carousel-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; background: rgba(45, 202, 5, 0.8); color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transition: opacity 0.3s; z-index: 20; }
+		#product-carousels:hover .carousel-nav { opacity: 1; }
+		.nav-left { left: -10px; }
+		.nav-right { right: -10px; }
 
-/* Gallery styles */
-.gallery {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-gap: 40px;
-padding: 20px 0;
-}
-
-.gallery-item {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.image-box {
-position: relative;
-width: 100%;
-overflow: hidden;
-border-radius: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-transition: transform 0.3s ease;
-}
-
-.image-box:hover {
-transform: scale(1.05);
-}
-
-.image-box img {
-width: 100%;
-height: auto;
-object-fit: cover;
-display: block;
-}
-
-.image-overlay {
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
-background-color: rgba(0, 0, 0, 0.7);
-color: white;
-padding: 15px;
-text-align: center;
-opacity: 0;
-transition: opacity 0.3s ease;
-}
-
-.image-box:hover .image-overlay {
-opacity: 1;
-}
-
-.image-overlay h3 {
-margin-bottom: 10px;
-font-size: 18px;
-}
-
-.image-overlay p {
-font-size: 14px;
-margin-bottom: 15px;
-}
-
-.view-project {
-display: inline-block;
-background-color: #9b87f5;
-color: white;
-text-decoration: none;
-padding: 8px 15px;
-border-radius: 5px;
-transition: background-color 0.3s ease;
-}
-
-.view-project:hover {
-background-color: #7E69AB;
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-body {
-  padding: 10px;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-nav ul {
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.gallery {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-}
-
-@media screen and (max-width: 480px) {
-h1 {
-  font-size: 28px;
-}
-
-nav ul {
-  gap: 10px;
-}
-
-.gallery {
-  grid-template-columns: 1fr;
-}
-}
-
-.modal-content {
-    border-radius: 10px;
-    border: none;
-}
-
-.modal-header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-    border-radius: 10px 10px 0 0;
-}
-
-.modal-body {
-    padding: 20px;
-}
-
-.project-details img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    object-fit: cover;
-}
-
-.project-meta {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 15px;
-}
-
-.modal-footer {
-    border-top: 1px solid #dee2e6;
-    padding: 15px;
-}
-
-.close {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: .5;
-}
-
-.close:hover {
-    color: #000;
-    text-decoration: none;
-    opacity: .75;
-}
-
-.project-title {
-    color: #333;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.project-description {
-    color: #666;
-    line-height: 1.6;
-}
-
-.project-meta p {
-    margin-bottom: 8px;
-    color: #555;
-    display: flex;
-    align-items: center;
-}
-
-.project-meta strong {
-    color: #333;
-    min-width: 80px;
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.project-meta span {
-    color: #666;
-    flex: 1;
-}
-
-@media (max-width: 768px) {
-    .project-details .row {
-        flex-direction: column;
-    }
-    
-    .project-details .col-md-6 {
-        margin-bottom: 20px;
-    }
-}
-</style>
+		@media(max-width: 767px){ 
+		  .product-carousel .item { height: 240px; } 
+		  .product-carousel .item img { height: 180px; } 
+		  .carousel-nav { opacity: 1; } 
+		}
+	</style>
 @endpush
 @section('content')
-<div class="ejab-overlay">
-    <!-- header section strats -->
-    @include('front.includes.nav')
-</div>
-<section class="about-support">
-  <span class="shape"></span>
-  <span class="shape2"></span>
-  <span class="shape3"></span>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <h3 class="mb-0">All Products</h3>
-      </div>
-      <div class="col-lg-6">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb justify-content-end bg-transparent mb-0">
-            <li class="breadcrumb-item">
-              <a href="#" class="breadcrumb-item router-link-active">Our</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="">Products</a>
-            </li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-  </div>
+<!-- slider SECTION================================================== -->
+<section class="page-section black-section innerpage-heading-2 padfix" style="background: url('{{asset('uploads/product-category/thumb/'.$category->image)}}') no-repeat center center; background-size: cover;">
+	<div class="relative container">
+		<div class="eight columns">
+			<div class="page-heading">
+			<!-- Content here -->
+			</div>
+		</div>
+	</div>              
 </section>
-<div class="container py-4">
-  <div class="row">
-    <div class="col-lg-12 px-2 ">
-      <main class="gallery">
-        @forelse($products as $product)
-        <div class="gallery-item">
-            <div class="image-box"  
-            data-toggle="modal" 
-            data-target="#projectModal"
-            data-title="{{$product->name}}"
-            data-description="{{$product->description}}"
-            data-image="{{asset('uploads/products/'.$product->image)}}"
-            data-barcode="{{$product->barcode}}"
-            data-brand="{{$product->brand?->title}}"
-            data-weight="{{$product->weight}}"
-            data-width="{{$product->width}}"
-            data-height="{{$product->height}}"
-            data-length="{{$product->length}}"
-            data-link="{{route('productDetails',$product->barcode)}}">
-                <img src="{{asset('uploads/products/thumb/'.$product->image)}}" alt="Product 1">
-                <div class="image-overlay">
-                    <h3>{{$product->name}}</h3>
-                    
-                </div>
-            </div>
-        </div>
-        @empty
-        <div class="gallery-item">
-            <div class="image-box">
-                <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page240/present/assets/images/img_3.jpg" alt="Product 2">
-            </div>
-        </div>
-        @endforelse
-        
-      </main>
-    </div>
-  </div>
-</div>
-
-<!-- Project Details Modal -->
-<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="projectModalLabel">Product Details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="project-details">
-          <div class="row">
-            <div class="col-md-6">
-              <img src="" alt="Project Image" class="img-fluid project-image">
-            </div>
-            <div class="col-md-6">
-              <h4 class="project-title mb-3"></h4>
-              <p class="project-description mb-4"></p>
-              <div class="project-meta">
-                <p><strong>barcode:</strong> <span class="project-barcode"></span></p>
-                <p><strong>Brand:</strong> <span class="project-brand"></span></p>
-                <p><strong>Weight:</strong> <span class="project-weight"></span></p>
-                <p><strong>Width:</strong> <span class="project-width"></span></p>
-                <p><strong>Height:</strong> <span class="project-height"></span></p>
-                <p><strong>Length:</strong> <span class="project-length"></span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a href="" class="btn btn-primary project-link">Product Details <i class="fa fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="curve-container n20"> <svg xmlns="http://www.w3.org/2000/svg" class="curve-container__curve curve-three" viewBox="0 0 1440 68" enable-background="new 0 0 1440 68"><path d="m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8" fill="#fff" transform="translate(0-1977)"></path></svg> </div>  
+	<!-- SECTION ABOUT==================================================  --> 
+    <section class="page-section bg_color--6 sp-top40 sp-bottom0" id="scroll-link" style="background-color:#fff;">
+       <section style="padding:40px 0; margin-bottom: 50px;"> 
+         <div class="container">
+ 
+         <h2 style="color:#54A50A; font-weight:700; font-size:2rem; margin-bottom:5px; text-align:left;">
+           Our Product
+         </h2>
+ 
+         <div class="d-flex justify-content-between align-items-center" 
+            style="border-bottom:1px solid #ccc; padding-bottom:15px; margin-bottom:20px;">
+           <h2 style="margin:0; font-weight:600; font-size:2rem; color:#000;">
+           {{$category->name}} Product List
+           </h2>
+           <img src="{{asset('uploads/product-category/thumb/'.$category->image)}}" alt="icon" style="width:134px; height:114px; object-fit:contain;">
+         </div>
+ 
+         <div class="d-flex" style="gap:20px; margin-bottom:20px;">
+            @forelse($category->children as $i=>$subcategory)
+           <span class="px-3 py-2 rounded-pill filter-btn @if($i==0) active @endif" data-category="{{$subcategory->slug}}"
+             style="cursor:pointer;border-radius: 7px; font-size:1rem; border:1px solid #54A50A; @if($i==0) color:#fff; background:#54A50A; @else color:#54A50A; background:#fff; @endif">
+           {{$subcategory->name}}
+           </span>
+		   @empty
+		   <span class="px-3 py-2 rounded-pill filter-btn active" data-category="chips"
+             style="cursor:pointer;border-radius: 7px; font-size:1rem; border:1px solid #54A50A; color:#fff; background:#54A50A;">
+           Chips
+           </span>
+           <span class="px-3 py-2 rounded-pill filter-btn" data-category="cake"
+             style="cursor:pointer;border-radius: 7px; font-size:1rem; border:1px solid #54A50A; color:#54A50A; background:#fff;">
+           Cake
+           </span>
+           <span class="px-3 py-2 rounded-pill filter-btn" data-category="biscuits"
+             style="cursor:pointer;border-radius: 7px; font-size:1rem; border:1px solid #54A50A; color:#54A50A; background:#fff;">
+           Biscuits
+           </span>
+		   @endforelse
+         </div>
+ 
+         <div id="product-carousels" style="margin-top:30px; position:relative;">
+			@forelse($category->children as $i=>$subcategory)
+           <div class="owl-carousel owl-theme product-carousel" id="active_cat{{ $i }}" data-category="{{$subcategory->slug}}"></div>
+		   @empty
+		   <div class="owl-carousel owl-theme product-carousel" data-category="chips"></div>
+		   <div class="owl-carousel owl-theme product-carousel" data-category="cake"></div>
+		   <div class="owl-carousel owl-theme product-carousel" data-category="biscuits"></div>
+		   @endforelse
+ 
+           <div class="carousel-nav nav-left">&#10094;</div>
+           <div class="carousel-nav nav-right">&#10095;</div>
+         </div>
+         </div>
+       </section>
+     </section>
 
 @endsection
 @push('scripts')
-<script>
-$(document).ready(function() {
-    $('.image-box').on('click', function() {
-        // Get the data attributes from the clicked button
-        var title = $(this).data('title');
-        var description = $(this).data('description');
-        var image = $(this).data('image');
-        var barcode = $(this).data('barcode');
-        var brand = $(this).data('brand');
-        var weight = $(this).data('weight');
-        var width = $(this).data('width');
-        var height = $(this).data('height');
-        var length = $(this).data('length');
-        var link = $(this).data('link');
 
-        // Update modal content
-        $('.project-title').text(title);
-        $('.project-description').text(description);
-        $('.project-image').attr('src', image);
-        $('.project-link').attr('href', link);
 
-        // Build meta data HTML based on available values
-        var metaHtml = '';
-        
-        if (barcode) {
-            metaHtml += `<p><strong>Barcode:</strong> <span class="project-barcode">${barcode}</span></p>`;
-        }
-        
-        if (brand) {
-            metaHtml += `<p><strong>Brand:</strong> <span class="project-brand">${brand}</span></p>`;
-        }
-        
-        if (weight) {
-            metaHtml += `<p><strong>Weight:</strong> <span class="project-weight">${weight}</span></p>`;
-        }
-        
-        if (width) {
-            metaHtml += `<p><strong>Width:</strong> <span class="project-width">${width}</span></p>`;
-        }
-        
-        if (height) {
-            metaHtml += `<p><strong>Height:</strong> <span class="project-height">${height}</span></p>`;
-        }
-        
-        if (length) {
-            metaHtml += `<p><strong>Length:</strong> <span class="project-length">${length}</span></p>`;
-        }
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
-        // Update meta data section
-        $('.project-meta').html(metaHtml);
-    });
-});
-</script>
+			<script>
+			const products = {
+				@forelse($category->children as $subcategory)
+				{{$subcategory->slug}}: [
+					@forelse($subcategory->products as $product)
+					{img: "{{asset('uploads/products/thumb/'.$product->image)}}", text: "{{$product->name}}"},
+					@empty
+					{img: "{{asset('front/assets/images/products/Kiddo Chocolate  Cake Mockup.png')}}", text: "Crispy potato chips"},
+					@endforelse
+				],
+				@empty
+				chips: [
+					{img: "{{asset('front/assets/images/products/Kiddo Chocolate  Cake Mockup.png')}}", text: "Crispy potato chips"},
+				],
+				cake: [
+					{img: "{{asset('front/assets/images/products/Kiddo Chocolate  Cake Mockup.png')}}", text: "Crispy potato chips"},
+				],
+				biscuits: [
+					{img: "{{asset('front/assets/images/products/Kiddo Chocolate  Cake Mockup.png')}}", text: "Crispy potato chips"},
+				],
+				@endforelse
+			  
+			};
+			$(".product-carousel").each(function() {
+			  const category = $(this).data("category");
+			  products[category].forEach((item) => {
+				$(this).append(`
+				  <div class="item">
+					<a data-fancybox="gallery-${category}" href="${item.img}" data-caption="${item.text}">
+					  <img src="${item.img}" alt="${item.text}">
+					</a>
+					<p>${item.text}</p>
+				  </div>
+				`);
+			  });
+
+			  $(this).owlCarousel({
+				loop: false,   // 🔹 আর রিপিট করবে না
+				margin: 15,
+				nav: false,
+				dots: false,
+				autoplay: true,
+				autoplayTimeout: 3000,
+				smartSpeed: 800,
+				responsive:{
+				  0:{ items:2 },
+				  576:{ items:2 },
+				  768:{ items:3 },
+				  992:{ items:4 }
+				}
+			  }).on("translated.owl.carousel", function(e) {
+				const carousel = $(this).data("owl.carousel");
+				if (carousel.current() === carousel.items().length - carousel.settings.items) {
+				  // 🔹 শেষ slide এ গেলে আবার প্রথম থেকে autoplay শুরু হবে
+				  setTimeout(() => {
+					$(this).trigger("to.owl.carousel", [0, 500]);
+				  }, 3000); // same autoplay delay
+				}
+			  });
+			});
+
+
+			// Fancybox config: next/prev + close only
+			Fancybox.bind("[data-fancybox]", {
+			  Toolbar: { display: ["close","prev","next"] },
+			  Image: { zoom: false, fit: "contain" },
+			  caption: (fancybox, carousel, slide) => slide.$trigger.dataset.caption,
+			  placeFocusBack: false
+			});
+
+			// Show first tab initially
+			$(".product-carousel").hide();
+			$(".product-carousel[id='active_cat0']").show();
+
+			// Tab switch
+			$(".filter-btn").on("click", function(){
+			  $(".filter-btn").css({background:"#fff", color:"#54A50A"});
+			  $(this).css({background:"#54A50A", color:"#fff"});
+			  const category = $(this).data("category");
+			  $(".product-carousel:visible").fadeOut(300);
+			  setTimeout(() => { $(`.product-carousel[data-category='${category}']`).fadeIn(300); }, 300);
+			});
+
+			// Carousel nav
+			$("#product-carousels .nav-left").on("click", function(){ $("#product-carousels .product-carousel:visible").trigger('prev.owl.carousel'); });
+			$("#product-carousels .nav-right").on("click", function(){ $("#product-carousels .product-carousel:visible").trigger('next.owl.carousel'); });
+			</script>
+
 @endpush
