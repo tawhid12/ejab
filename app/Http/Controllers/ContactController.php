@@ -39,6 +39,27 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         try {
+
+            $request->validate([
+                'g-recaptcha-response' => 'required',
+            ]);
+
+            // 1. Secret key from .env
+            $recaptchaSecret = env('GOOGLE_RECAPTCHA_SECRET');
+
+            // 2. Token received from form
+            $recaptchaResponse = $request->input('g-recaptcha-response');
+
+            // 3. Send verification request to Google
+            $verify = file_get_contents(
+                "https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}"
+            );
+            $responseData = json_decode($verify);
+
+            if (!$responseData->success || $responseData->score < 0.5) {
+                return back()->withErrors(['captcha' => 'reCAPTCHA verification failed. Please try again.']);
+            }
+            
             $c = new Contact();
             $c->name =  $request->name;
             $c->email =  $request->email;

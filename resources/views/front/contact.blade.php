@@ -74,27 +74,29 @@
           <p style="margin:0; line-height:1;">Our Team Can Response In Real Life</p>
           <p class="mt-2" style="font-size:0.95rem; color:#555;">@Fleetclothing.com</p>
         </div>
-      </div>
-
-      <!-- Column 2 -->
-      <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-4">
-        <div class="d-flex flex-column align-items-start justify-content-start p-4 card-box">
-          <div class="d-inline-block rounded">
-            <img src="{{ asset('front/assets/images/contact2.png') }}" alt="Office Icon" style="width:28px; height:28px; object-fit:contain;">
-          </div>
-
-          <h3 class="mt-3" style="font-size:1.4rem; font-weight:700; color:#000;">Visit Us Our Office</h3>
-
-          <p style="margin:0; line-height:1;">Visit Our real Life Location</p>
-          <p class="mt-2" style="font-size:0.95rem; color:#555;">Building name DOM-INNO, Uttara Dhaka</p>
-        </div>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-4">
-        <div class="d-flex flex-column align-items-start justify-content-start p-4 card-box">
-          <div class="d-inline-block rounded">
-            <img src="{{ asset('front/assets/images/contact3.png') }}" alt="Call Icon" style="width:28px; height:28px; object-fit:contain;">
+        <div class="container contact_bg layout_padding2-top">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="contact_form">
+                <form method="post" action="{{route('contact.store')}}">
+                    @csrf
+                  <input type="text" name="name" placeholder="Name " required/>
+                  <input type="email" name="email" placeholder="Email" required/>
+                  <input
+                    type="text"
+                    placeholder="Message"
+                    class="message_input" name="message" required
+                  />
+                  <input type="hidden" name="g-recaptcha-response" id="recaptchaResponse">
+                  <button type="submit">Send</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="img-box">
+                <img src="{{asset('assets/images/contact-img.jpg')}}" alt="" />
+              </div>
+            </div>
           </div>
 
           <h3 class="mt-3" style="font-size:1.4rem; font-weight:700; color:#000;">Call Us Directly</h3>
@@ -216,8 +218,12 @@ Project With Us</span>
 
     @endsection
 @push('scripts')
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('GOOGLE_RECAPTCHA_SITE') }}"></script>
 <script>
-
+    grecaptcha.ready(function() {
+        grecaptcha.execute('{{ env('GOOGLE_RECAPTCHA_SITE') }}', {action: 'submit'}).then(function(token) {
+            document.getElementById('recaptchaResponse').value = token;
+        });
+    });
 </script>
-
 @endpush
