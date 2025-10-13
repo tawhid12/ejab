@@ -150,12 +150,9 @@
      style="background-color:#fff; color:#000; min-height:300px; padding:40px 30px;">
 
   <!-- Heading start -->
-  <h1 class="hs3 fw900 lp2 webfont3 sm-bottom10 " 
-      data-sr="enter bottom over 0.9s and move 140px" style="color:#8ED053;">
-    Ready To Discuss  <br>
-    <span class="color-black font-bold" >Your
-Project With Us</span>
-  </h1>
+    <h1 class="hs3 fw900 lp2 webfont3 sm-bottom10 " data-sr="enter bottom over 0.9s and move 140px" style="color:#8ED053;"> Ready To Discuss  <br>
+      <span class="color-black font-bold" >Your Project With Us</span>
+    </h1>
 
   <!-- Form -->
   <form style="width:100%; max-width:500px; margin-top:30px;">
